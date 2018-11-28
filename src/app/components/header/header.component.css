@@ -3,21 +3,23 @@ header {
     align-items: center;
     flex-flow: row nowrap;
     justify-content: space-between;
-    height: 85px;
+    height: 100px;
     padding: 16px;
     border-bottom: 2px solid #bfbfbf;
 }
 
 .i18n {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
     width: 56px;
-    height: 56px;
+    height: 12px;
+    margin: 8px 0;
     flex-grow: 0;
 }
 
-.hun button, .eng button {
+.flag {
+    display: inline-block;
+}
+
+.flag button {
     width: 24px;
     height: 12px;
     background-size: contain;
@@ -27,6 +29,11 @@ header {
     border: none;
     box-shadow: none;
     cursor: pointer;
+    opacity: 0.5;
+}
+
+.flag.active button {
+    opacity: 1;
 }
 
 .hun button {
@@ -50,7 +57,7 @@ header {
 
 .main-navigation {
     display: flex;
-    align-items: center;
+    align-items: baseline;
 }
 
 .main-navigation ul {

@@ -32,4 +32,8 @@ export class HeaderComponent implements OnInit {
   get isLoggedIn() {
     return !(this.isLoginScreen || this.isRegisterScreen);
   }
+
+  get locale() {
+    return this.i18n.locale;
+  }
 }
