@@ -1,0 +1,74 @@
+header {
+    display: flex;
+    align-items: center;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    height: 85px;
+    padding: 16px;
+    border-bottom: 2px solid #bfbfbf;
+}
+
+.i18n {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    flex-grow: 0;
+}
+
+.hun button, .eng button {
+    width: 24px;
+    height: 12px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+.hun button {
+    background-image: url('/assets/images/hun.png');
+    margin-right: 8px;
+}
+
+.eng button {
+    background-image: url('/assets/images/eng.png');
+}
+
+.logo {
+    position: relative;
+    flex-grow: 1;
+}
+
+.logo img {
+    width: auto;
+    height: 53px;
+}
+
+.main-navigation {
+    display: flex;
+    align-items: center;
+}
+
+.main-navigation ul {
+    list-style: none;
+}
+
+.main-navigation ul li {
+    float: left;
+}
+
+.main-navigation ul li:not(:last-of-type) {
+    margin-right: 16px;
+}
+
+.main-navigation ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #403593;
+    font-weight: 700;
+}
