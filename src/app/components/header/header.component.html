@@ -1,0 +1,17 @@
+<header>
+    <div class="i18n">
+        <div class="hun"><button (click)="enableHungarian()"></button></div>
+        <div class="eng"><button (click)="enableEnglish()"></button></div>
+    </div>
+    <div class="logo">
+        <img src="https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo1.png" alt="RFT Valami" />
+    </div>
+    <nav class="main-navigation">
+        <ul>
+            <li><a routerLink="/feedback">{{ i18n.header.feedback }}</a></li>
+            <li *ngIf="isRegisterScreen"><a routerLink="/login">{{ i18n.header.login }}</a></li>
+            <li *ngIf="isLoggedIn"><a (click)="logout()">{{ i18n.header.logout }}</a></li>
+            <li *ngIf="isLoginScreen"><a routerLink="register">{{ i18n.header.register }}</a></li>
+        </ul>
+    </nav>
+</header>
