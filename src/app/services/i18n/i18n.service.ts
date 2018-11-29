@@ -1,26 +1,21 @@
 import { Injectable } from '@angular/core';
-import { i18n } from 'src/assets/i18n/i18n';
+import { HeaderI18NTextResource } from '../../../assets/i18n/i18n.header.component';
+import { LoginI18NTextResource } from '../../../assets/i18n/i18n.login.component';
+import { FooterI18NTextResource } from '../../../assets/i18n/i18n.footer.component';
 import { BehaviorSubject } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class I18nService {
+@Injectable()
+export abstract class I18nService {
 
-  public locale = 'hun';
-  public subscription = new BehaviorSubject('hun');
+  public subscription = new BehaviorSubject('hu');
+  public locale: string = 'hu';
 
-  constructor() { }
-
-  get header() {
-    return i18n[this.locale].header;
+  constructor() {
   }
 
-  get login() {
-    return i18n[this.locale].login;
-  }
+  abstract get header(): HeaderI18NTextResource;
 
-  get footer() {
-    return i18n[this.locale].footer;
-  }
+  abstract get login(): LoginI18NTextResource;
+
+  abstract get footer(): FooterI18NTextResource;
 }

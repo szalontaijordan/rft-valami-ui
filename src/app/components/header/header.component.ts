@@ -16,13 +16,13 @@ export class HeaderComponent implements OnInit {
   }
 
   enableHungarian() {
-    this.i18n.locale = 'hun';
+    this.i18n.locale = 'hu';
     this.i18n.subscription.next(this.i18n.locale);
 
   }
 
   enableEnglish() {
-    this.i18n.locale = 'eng';
+    this.i18n.locale = 'gb';
     this.i18n.subscription.next(this.i18n.locale);
   }
 

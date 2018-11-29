@@ -1,5 +1,5 @@
 export const footer: FooterI18NTextResource = {
-    hun: {
+    hu: {
         news: {
             title: 'Naprakész információk',
             feed: 'Hírek forrása',
@@ -15,7 +15,7 @@ export const footer: FooterI18NTextResource = {
             team: 'A fejlesztő csapat'
         }
     },
-    eng: {
+    gb: {
         news: {
             title: 'Up to date information',
             feed: 'Source of News',
@@ -33,9 +33,9 @@ export const footer: FooterI18NTextResource = {
     }
 };
 
-interface FooterI18NTextResource {
-    hun: FooterTextResource;
-    eng: FooterTextResource;
+export interface FooterI18NTextResource {
+    hu: FooterTextResource;
+    gb: FooterTextResource;
 }
 
 interface FooterTextResource {

@@ -17,7 +17,6 @@ export class MockUserService extends UserService {
 
   constructor() {
     super(null);
-    console.log('Using mock implementation for UserService');
     this.isLoggedIn = false;
   }
 

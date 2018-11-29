@@ -1,5 +1,5 @@
 export const login: LoginI18NTextResource = {
-    hun: {
+    hu: {
         title: 'Bejelentkezés',
         username: 'Felhasználónév',
         password: 'Jelszó',
@@ -15,7 +15,7 @@ export const login: LoginI18NTextResource = {
             common: 'Rendszerhiba lépett fel, kérjük próbálja újra.'
         }
     },
-    eng: {
+    gb: {
         title: 'Log In',
         username: 'Username',
         password: 'Password',
@@ -33,9 +33,9 @@ export const login: LoginI18NTextResource = {
     }
 };
 
-interface LoginI18NTextResource {
-    hun: LoginTextResource;
-    eng: LoginTextResource;
+export interface LoginI18NTextResource {
+    hu: LoginTextResource;
+    gb: LoginTextResource;
 }
 
 interface LoginTextResource {

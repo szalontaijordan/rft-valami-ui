@@ -36,12 +36,12 @@ header {
     opacity: 1;
 }
 
-.hun button {
+.hu button {
     background-image: url('/assets/images/hun.png');
     margin-right: 8px;
 }
 
-.eng button {
+.gb button {
     background-image: url('/assets/images/eng.png');
 }
 

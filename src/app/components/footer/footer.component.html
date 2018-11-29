@@ -4,7 +4,7 @@
     </div>
     <div class="feed">
         <h2>{{ i18n.footer.news.title }}</h2>
-        <p>{{ i18n.footer.news.feed }}: <a href="https://newsapi.org/"><em>News API</em></a></p>
+        <p>{{ i18n.footer.news.feed }}: <a href="https://newsapi.org/" target="_blank"><em>News API</em></a></p>
         <ul *ngIf="!!news">
             <li *ngFor="let item of news" class="news">
                 <h4><a [href]="item.url" target="_blank">{{ item.title }}</a></h4>

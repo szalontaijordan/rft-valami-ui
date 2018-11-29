@@ -1,11 +1,11 @@
 export const header: HeaderI18NTextResource = {
-    hun: {
+    hu: {
         register: 'Regisztráció',
         login: 'Bejelentkezés',
         logout: 'Kijelentkezés',
         feedback: 'Visszajelzés'
     },
-    eng: {
+    gb: {
         register: 'Register',
         login: 'Log In',
         logout: 'Log Out',
@@ -13,9 +13,9 @@ export const header: HeaderI18NTextResource = {
     }
 };
 
-interface HeaderI18NTextResource {
-    hun: HeaderTextResource;
-    eng: HeaderTextResource;
+export interface HeaderI18NTextResource {
+    hu: HeaderTextResource;
+    gb: HeaderTextResource;
 }
 
 interface HeaderTextResource {
