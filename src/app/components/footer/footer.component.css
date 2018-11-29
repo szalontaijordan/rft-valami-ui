@@ -9,26 +9,29 @@ footer {
 
 .space, .info, .feed {
     border-radius: 4px;
+    flex-grow: 1;
+    flex-basis: 0;
 }
 
 .space {
-    max-width: 400px;
-    flex-grow: 0;
+    max-width: 300px;
 }
 
 .info {
-    max-width: 400px;
-    flex-grow: 1;
+    max-width: 300px;
     color: #fff;
+}
+
+.info > div {
+    width: 150px;
+    margin: 0 auto;
 }
 
 .feed {
     margin: 0 16px;
     padding: 16px;
     background-color: #fff;
-    flex-grow: 1;
     height: 300px;
-    max-width: 800px;
     overflow-y: scroll;
 }
 

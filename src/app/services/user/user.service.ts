@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable()
@@ -10,14 +9,15 @@ export abstract class UserService {
   };
 
   isLoggedIn: boolean;
+  currentUser: any;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor() { }
 
-  abstract isValid(user_name: string, password: string): Observable<any>;
+  abstract isValid(userName: string, password: string): Observable<any>;
 
-  abstract upload(user_name: string, password: string, full_name: string, email: string): Observable<any>;
+  abstract upload(userName: string, password: string, fullName: string, email: string): Observable<any>;
 
-  abstract update(user_name: string, password: string, full_name: string, email: string): Observable<any>;
+  abstract update(userName: string, password: string, fullName: string, email: string): Observable<any>;
 
   abstract remove(id: string): Observable<any>;
 }

@@ -16,7 +16,7 @@ export class MockUserService extends UserService {
   };
 
   constructor() {
-    super(null);
+    super();
     this.isLoggedIn = false;
   }
 
