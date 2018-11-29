@@ -10,7 +10,7 @@ import { UserService } from '../user.service';
 export class RemoteUserService extends UserService {
 
   constructor(private http: HttpClient) {
-    super(http);
+    super();
   }
 
   isValid(user_name: string, password: string) {

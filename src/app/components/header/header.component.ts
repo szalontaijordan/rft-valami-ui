@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { I18nService } from 'src/app/services/i18n/i18n.service';
 import { NewsService } from 'src/app/services/news/news.service';
+import { UserService } from '../../services/user/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +11,11 @@ import { NewsService } from 'src/app/services/news/news.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public i18n: I18nService, private news: NewsService) { }
+  constructor(public i18n: I18nService,
+              private news: NewsService,
+              private userService: UserService,
+              private router: Router) {
+              }
 
   ngOnInit() {
     this.news.getNews();
@@ -24,6 +30,12 @@ export class HeaderComponent implements OnInit {
   enableEnglish() {
     this.i18n.locale = 'gb';
     this.i18n.subscription.next(this.i18n.locale);
+  }
+
+  logout() {
+    this.userService.isLoggedIn = false;
+    this.userService.currentUser = null;
+    this.router.navigate(['login']);
   }
 
   get isRegisterScreen() {

@@ -14,3 +14,106 @@ body {
 h1, h2, h3, h4, h5, h6 {
     margin: 8px 0;
 }
+
+.form-group {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 18px;
+    margin: 8px 0;
+}
+
+.form-group input[type] {
+    height: 48px;
+    width: 100%;
+    font-size: 18px;
+    padding-left: 8px;
+    margin-bottom: 8px;
+}
+
+.form-group input[type] + i {
+    font-size: 18px;
+    position: absolute;
+    right: 8px;
+    top: 38px;
+    transform: translateX(-50%);
+}
+
+a.link {
+    cursor: pointer;
+}
+
+/* copied from bootstrap */
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    cursor: pointer;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-secondary {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-warning {
+    color: #212529;
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+
+.btn-light {
+    color: #212529;
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+}
+
+.btn-dark {
+    color: #fff;
+    background-color: #343a40;
+    border-color: #343a40;
+}
+
+.btn-link {
+    font-weight: 400;
+    color: #007bff;
+    background-color: transparent;
+}
+
+.btn:disabled {
+    pointer-events: none;
+    opacity: 0.75;
+}
+
+/* end copied from bootstrap*/
