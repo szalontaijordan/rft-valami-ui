@@ -1,1 +1,37 @@
-<p>footer works!</p>
+<footer>
+    <div class="space">
+        <img src="https://via.placeholder.com/300x300" alt="Placeholder">
+    </div>
+    <div class="feed">
+        <h2>{{ i18n.footer.news.title }}</h2>
+        <p>{{ i18n.footer.news.feed }}</p>
+        <ul *ngIf="!!news">
+            <li *ngFor="let item of news" class="news">
+                <h4><a [href]="item.url" target="_blank">{{ item.title }}</a></h4>
+                <p *ngIf="!!item.short else noText">{{ item.short }}</p>
+                <ng-template #noText>{{ i18n.footer.news.noText }}</ng-template>
+            </li>
+        </ul>
+    </div>
+    <div class="info">
+        <div class="supported-browsers">
+            <strong>{{ i18n.footer.aside.supportedBrowsers }}:</strong>
+            <ul>
+                <li>Google Chrome</li>
+                <li>Microsoft Edge</li>
+                <li>Mozilla Firefox</li>
+            </ul>
+        </div>
+        <div class="devs">
+            <strong>{{ i18n.footer.aside.team }}:</strong>
+            <ul>
+                <li>Balázs Bardócz</li>
+                <li>István Gégény</li>
+                <li>Jordán Szalontai</li>
+                <li>Norbert Gagyi</li>
+            </ul>
+        </div>
+        <div class="version"><strong>{{ i18n.footer.aside.version }}:</strong> 0.0.0</div>
+        <div class="date"><strong>{{ i18n.footer.aside.date.text }}:</strong> {{ i18n.footer.aside.date.display }}</div>
+    </div>
+</footer>
