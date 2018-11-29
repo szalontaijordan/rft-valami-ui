@@ -15,10 +15,14 @@ export class FooterComponent implements OnInit {
 
   ngOnInit() {
     this.i18n.subscription.subscribe(
-      next => this.newsService.getNews().subscribe({
-        next: news => this.news = news
-      })
+      next => this.fetchNews()
     );
+  }
+
+  fetchNews() {
+    this.newsService.getNews().subscribe({
+      next: news => this.news = news
+    });
   }
 
 }

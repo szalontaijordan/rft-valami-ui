@@ -2,7 +2,7 @@ export const footer: FooterI18NTextResource = {
     hun: {
         news: {
             title: 'Naprakész információk',
-            feed: 'Hírek',
+            feed: 'Hírek forrása',
             noText: 'Kattintson a címre a hír elolvasásához'
         },
         aside: {
@@ -18,7 +18,7 @@ export const footer: FooterI18NTextResource = {
     eng: {
         news: {
             title: 'Up to date information',
-            feed: 'News',
+            feed: 'Source of News',
             noText: 'Click on the title to see the news'
         },
         aside: {
