@@ -18,6 +18,8 @@ import { NewsService } from './services/news/news.service';
 import { APINewsService } from './services/news/api/news.service.api';
 import { CredentialFormComponent } from './components/login/credential-form/credential-form.component';
 import { RegisterFormComponent } from './components/register/register-form/register-form.component';
+import { FeedbackComponent } from './components/feedback/feedback.component';
+import { FeedbackFormComponent } from './components/feedback/feedback-form/feedback-form.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { RegisterFormComponent } from './components/register/register-form/regis
     FooterComponent,
     CredentialFormComponent,
     RegisterFormComponent,
+    FeedbackComponent,
+    FeedbackFormComponent,
   ],
   imports: [
     BrowserModule,

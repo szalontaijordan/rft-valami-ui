@@ -20,4 +20,6 @@ export abstract class UserService {
   abstract update(userName: string, password: string, fullName: string, email: string): Observable<any>;
 
   abstract remove(id: string): Observable<any>;
+
+  abstract all(): Observable<Array<any>>;
 }

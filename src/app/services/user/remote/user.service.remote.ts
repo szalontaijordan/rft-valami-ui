@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { LOGIN_API } from '../../../app.api.routes';
 import { UserService } from '../user.service';
+import { of, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +14,8 @@ export class RemoteUserService extends UserService {
     super();
   }
 
-  isValid(user_name: string, password: string) {
-    const body = { user_name, password };
+  isValid(userName: string, password: string) {
+    const body = { userName, password };
     const headers = { ...this.headers };
 
     return this.http.post(`${LOGIN_API}/isValid`, { headers, body });
@@ -30,6 +31,10 @@ export class RemoteUserService extends UserService {
 
   remove(id: string) {
     return this.http.delete(`${LOGIN_API}/remove/${id}`);
+  }
+
+  all(): Observable<Array<any>> {
+    return of([]);
   }
 
   private fullUserPOST(path: string, user_name: string, password: string, full_name: string, email: string) {

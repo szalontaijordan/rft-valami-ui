@@ -19,6 +19,14 @@ h1 {
     font-size: 24px;
 }
 
+.layout {
+    padding: 16px;
+}
+
+section {
+    padding: 16px;
+}
+
 .form-group {
     position: relative;
     margin-bottom: 16px;
@@ -44,6 +52,10 @@ h1 {
     right: 8px;
     top: 38px;
     transform: translateX(-50%);
+}
+
+.form-group textarea {
+    width: 100%;
 }
 
 .outer-form-group {
