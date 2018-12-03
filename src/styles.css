@@ -15,6 +15,10 @@ h1, h2, h3, h4, h5, h6 {
     margin: 8px 0;
 }
 
+h1 {
+    font-size: 24px;
+}
+
 .form-group {
     position: relative;
     margin-bottom: 16px;
@@ -40,6 +44,22 @@ h1, h2, h3, h4, h5, h6 {
     right: 8px;
     top: 38px;
     transform: translateX(-50%);
+}
+
+.outer-form-group {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-content: space-between;
+}
+
+.outer-form-group .form-group {
+    width: 50%;
+
+}
+
+.outer-form-group .form-group:not(:last-child) {
+    margin-right: 32px;
 }
 
 a.link {
@@ -117,3 +137,19 @@ a.link {
 }
 
 /* end copied from bootstrap*/
+
+i[class*="fa-eye"] {
+    cursor: pointer;
+}
+
+.forgotten {
+    margin-left: 8px;
+}
+
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948;
+}
+
+.ng-invalid[required], .ng-invalid.required  {
+    border-left: 5px solid rgb(169, 66, 66); 
+}

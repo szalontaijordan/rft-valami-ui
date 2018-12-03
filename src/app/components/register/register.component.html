@@ -1,1 +1,8 @@
-<p>register works</p>
+<div class="layout">
+    <section class="register">
+        <div class="register-form">
+            <h1><span>{{ i18n.register.title | uppercase }}</span></h1>
+            <app-register-form (register)="registerUser($event)"></app-register-form>
+        </div>
+    </section>
+</div>

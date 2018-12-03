@@ -17,6 +17,7 @@ import { StaticI18nService } from './services/i18n/static/i18n.service.static';
 import { NewsService } from './services/news/news.service';
 import { APINewsService } from './services/news/api/news.service.api';
 import { CredentialFormComponent } from './components/login/credential-form/credential-form.component';
+import { RegisterFormComponent } from './components/register/register-form/register-form.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CredentialFormComponent } from './components/login/credential-form/cred
     HeaderComponent,
     DashboardComponent,
     FooterComponent,
-    CredentialFormComponent
+    CredentialFormComponent,
+    RegisterFormComponent,
   ],
   imports: [
     BrowserModule,

@@ -27,11 +27,6 @@ export const login: LoginI18NTextResource = {
                             Suspendisse potenti. Morbi vitae sagittis nisl. Fusce sed purus non purus fermentum tempus.`
                 }
            ]
-        },
-        errors: {
-            invalidCredentials: 'Helytelen felhasználónév vagy jelszó!',
-            common: 'Rendszerhiba lépett fel, kérjük próbálja újra.',
-            required: 'Ennek a mezőnek a kitöltése kötelező'
         }
     },
     gb: {
@@ -62,11 +57,6 @@ export const login: LoginI18NTextResource = {
                             Suspendisse potenti. Morbi vitae sagittis nisl. Fusce sed purus non purus fermentum tempus.`
                 }
            ]
-        },
-        errors: {
-            invalidCredentials: 'Invalid username or password!',
-            common: 'Internal error occured, please try again.',
-            required: 'This field is required'
         }
     }
 };
@@ -87,10 +77,5 @@ interface LoginTextResource {
             title: string,
             short: string
         }>;
-    };
-    errors: {
-        invalidCredentials: string,
-        common: string,
-        required: string
     };
 }

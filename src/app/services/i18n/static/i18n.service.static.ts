@@ -26,4 +26,12 @@ export class StaticI18nService extends I18nService {
   get footer() {
     return i18n[this.locale].footer;
   }
+
+  get register() {
+    return i18n[this.locale].register;
+  }
+
+  get errors() {
+    return i18n[this.locale].errors;
+  }
 }
