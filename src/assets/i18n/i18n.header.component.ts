@@ -3,13 +3,15 @@ export const header: HeaderI18NTextResource = {
         register: 'Regisztráció',
         login: 'Bejelentkezés',
         logout: 'Kijelentkezés',
-        feedback: 'Visszajelzés'
+        feedback: 'Visszajelzés',
+        dashboard: 'Vezérlőpult'
     },
     gb: {
         register: 'Register',
         login: 'Log In',
         logout: 'Log Out',
-        feedback: 'Feedback'
+        feedback: 'Feedback',
+        dashboard: 'Dashboard'
     }
 };
 
@@ -23,4 +25,5 @@ interface HeaderTextResource {
    login: string;
    logout: string;
    feedback: string;
+   dashboard: string;
 }

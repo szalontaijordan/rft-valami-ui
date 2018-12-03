@@ -11,8 +11,8 @@ export class StaticI18nService extends I18nService {
   public locale = 'hu';
   public subscription = new BehaviorSubject('hu');
 
-  constructor() { 
-    super()
+  constructor() {
+    super();
   }
 
   get header() {
@@ -33,5 +33,9 @@ export class StaticI18nService extends I18nService {
 
   get errors() {
     return i18n[this.locale].errors;
+  }
+
+  get feedback() {
+    return i18n[this.locale].feedback;
   }
 }

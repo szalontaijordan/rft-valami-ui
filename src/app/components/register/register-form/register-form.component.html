@@ -33,5 +33,5 @@
     <i *ngIf="!isShowPassword" (click)="togglePassword()" class="fas fa-eye-slash"></i>
     <i *ngIf="isShowPassword" (click)="togglePassword()" class="fas fa-eye"></i>
   </div>
-  <button class="btn btn-primary" [disabled]="!registerForm.valid" (click)="submit()">{{ i18n.header.login }}</button>
+  <button class="btn btn-primary" [disabled]="!registerForm.valid" (click)="submit()">{{ i18n.register.title }}</button>
 </form>

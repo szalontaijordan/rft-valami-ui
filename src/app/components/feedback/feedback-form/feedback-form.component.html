@@ -1,0 +1,18 @@
+<form #feedbackForm="ngForm">
+  <div class="form-group">
+    <label for="name">{{ i18n.feedback.name }}</label>
+    <input [(ngModel)]="model.fromName" type="name" name="name" id="name" required #name="ngModel">
+  </div>
+  <div class="form-group">
+    <label for="email">{{ i18n.feedback.email }}</label>
+    <input [(ngModel)]="model.fromEmail" type="email" name="email" id="email" required #email="ngModel">
+  </div>
+  <div class="form-group">
+    <label for="text">{{ i18n.feedback.text }}</label>
+    <textarea
+      [(ngModel)]="model.text" 
+      [placeholder]="i18n.feedback.hint"
+      name="text" id="text" cols="30" rows="10" required #text="ngModel"></textarea>
+  </div>
+  <button class="btn btn-primary" (click)="submit()" [disabled]="!feedbackForm.valid">{{ i18n.feedback.send }}</button>
+</form>

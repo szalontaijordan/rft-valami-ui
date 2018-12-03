@@ -46,8 +46,12 @@ export class HeaderComponent implements OnInit {
     return window.location.href.endsWith('login');
   }
 
+  get isFeedbackScreen() {
+    return window.location.href.endsWith('feedback');
+  }
+
   get isLoggedIn() {
-    return !(this.isLoginScreen || this.isRegisterScreen);
+    return this.userService.isLoggedIn;
   }
 
   get locale() {

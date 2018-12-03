@@ -3,12 +3,15 @@ import { HeaderI18NTextResource } from '../../../assets/i18n/i18n.header.compone
 import { LoginI18NTextResource } from '../../../assets/i18n/i18n.login.component';
 import { FooterI18NTextResource } from '../../../assets/i18n/i18n.footer.component';
 import { BehaviorSubject } from 'rxjs';
+import { RegisterI18NTextResource } from 'src/assets/i18n/i18n.register.component';
+import { ErrorsI18NTextResource } from 'src/assets/i18n/i18n.errors';
+import { FeedbackI18NTextResource } from 'src/assets/i18n/i18n.feedback.component';
 
 @Injectable()
 export abstract class I18nService {
 
   public subscription = new BehaviorSubject('hu');
-  public locale: string = 'hu';
+  public locale = 'hu';
 
   constructor() {
   }
@@ -18,4 +21,11 @@ export abstract class I18nService {
   abstract get login(): LoginI18NTextResource;
 
   abstract get footer(): FooterI18NTextResource;
+
+  abstract get register(): RegisterI18NTextResource;
+
+  abstract get errors(): ErrorsI18NTextResource;
+
+  abstract get feedback(): FeedbackI18NTextResource;
+  
 }

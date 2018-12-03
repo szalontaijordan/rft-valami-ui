@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { UserService } from '../user.service';
-import { of } from 'rxjs';
+import { of, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,20 +20,35 @@ export class MockUserService extends UserService {
     this.isLoggedIn = false;
   }
 
-  isValid(userName: string, password: string) {
+  isValid(userName: string, password: string): Observable<any> {
     return of(this.dummyUser);
   }
 
-  upload(userName: string, password: string, fullName: string, email: string) {
+  upload(userName: string, password: string, fullName: string, email: string): Observable<any> {
     return this.fullUserPOST('', userName, password, fullName, email);
   }
 
-  update(userName: string, password: string, fullName: string, email: string) {
+  update(userName: string, password: string, fullName: string, email: string): Observable<any> {
     return this.fullUserPOST('', userName, password, fullName, email);
   }
 
-  remove(id: string) {
+  remove(id: string): Observable<any> {
     return of(true);
+  }
+
+  all(): Observable<Array<any>> {
+    const mockUsers = [];
+
+    for (let i = 0; i < 20; i++) {
+      mockUsers.push({
+        userName: `mockuser${i}`,
+        fullName: `Mock User (${i})`,
+        password: 'password1A',
+        email: `mockuser${i}@example.com`
+      });
+    }
+
+    return of(mockUsers);
   }
 
   private fullUserPOST(path: string, userName: string, password: string, fullName: string, email: string) {

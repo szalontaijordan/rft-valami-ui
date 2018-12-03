@@ -8,8 +8,9 @@
     </div>
     <nav class="main-navigation">
         <ul>
-            <li><a routerLink="/feedback">{{ i18n.header.feedback }}</a></li>
-            <li *ngIf="isRegisterScreen"><a class="link" routerLink="/login">{{ i18n.header.login }}</a></li>
+            <li *ngIf="isLoggedIn && isFeedbackScreen"><a class="link" routerLink="dashboard">{{ i18n.header.dashboard }}</a></li>
+            <li *ngIf="!isFeedbackScreen"><a routerLink="/feedback">{{ i18n.header.feedback }}</a></li>
+            <li *ngIf="!isLoggedIn && !isLoginScreen"><a class="link" routerLink="/login">{{ i18n.header.login }}</a></li>
             <li *ngIf="isLoggedIn"><a class="link" (click)="logout()">{{ i18n.header.logout }}</a></li>
             <li *ngIf="isLoginScreen"><a class="link" routerLink="register">{{ i18n.header.register }}</a></li>
         </ul>

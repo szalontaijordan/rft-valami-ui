@@ -1,0 +1,9 @@
+<div class="layout">
+  <section class="feedback">
+    <h1>{{ i18n.feedback.title }}</h1>
+    <p>{{ i18n.feedback.explanation }}</p>
+    <div class="feedback-form">
+      <app-feedback-form (send)="sendEmail($event)"></app-feedback-form>
+    </div>
+  </section>
+</div>
