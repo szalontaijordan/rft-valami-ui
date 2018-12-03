@@ -1,0 +1,21 @@
+section.dashboard {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.personal, .features, .log {
+    padding: 8px;
+}
+
+.personal {
+    width: 25%;
+}
+
+.features {
+    width: 50%;
+}
+
+.log {
+    width: 25%;
+}

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user/user.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { I18nService } from 'src/app/services/i18n/i18n.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,22 +10,20 @@ import { UserService } from '../../services/user/user.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private userService: UserService) {
+  currentUser = {
+    role: 'ADMIN',
+    userName: 'szalontaijordan',
+    fullName: 'Szalontai Jordán',
+    email: 'jordanlt1111@gmail.com'
+  };
+
+  constructor(private userService: UserService,
+              private logger: LoggerService,
+              private i18n: I18nService) {
   }
 
   ngOnInit() {
-  }
-
-  get fullName() {
-    return this.userService.currentUser.fullName;
-  }
-
-  get userName() {
-    return this.userService.currentUser.userName;
-  }
-
-  get email() {
-    return this.userService.currentUser.email;
+    this.logger.log(this.i18n.header['login']);
   }
 
 }

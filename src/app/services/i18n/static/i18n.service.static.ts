@@ -38,4 +38,8 @@ export class StaticI18nService extends I18nService {
   get feedback() {
     return i18n[this.locale].feedback;
   }
+
+  get dashboard() {
+    return i18n[this.locale].dashboard;
+  }
 }

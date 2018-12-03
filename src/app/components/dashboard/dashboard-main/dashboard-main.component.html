@@ -1,0 +1,6 @@
+<section class="main">
+  <div class="tile subjects" appLoggedElement>{{ i18n.dashboard.main.subjects }}</div>
+  <div class="tile download" appLoggedElement>{{ i18n.dashboard.main.download }}</div>
+  <div class="tile upload" appLoggedElement>{{ i18n.dashboard.main.upload }}</div>
+  <div *ngIf="role === 'ADMIN'" class="tile all-users" appLoggedElement>{{ i18n.dashboard.main.allUsers }}</div>
+</section>

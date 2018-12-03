@@ -1,5 +1,13 @@
-{{ fullName }}
-<br>
-{{ userName }}
-<br>
-{{ email }}
+<div class="layout">
+    <section class="dashboard">
+        <div class="personal">
+            <app-dashboard-info [user]="currentUser"></app-dashboard-info>
+        </div>
+        <main class="features">
+            <app-dashboard-main [role]="currentUser.role"></app-dashboard-main>
+        </main>
+        <div class="log">
+            <app-dashboard-log></app-dashboard-log>
+        </div>
+    </section>
+</div>

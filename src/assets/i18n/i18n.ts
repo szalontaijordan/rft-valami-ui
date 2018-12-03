@@ -4,6 +4,7 @@ import { footer } from './i18n.footer.component';
 import { errors } from './i18n.errors';
 import { register } from './i18n.register.component';
 import { feedback } from './i18n.feedback.component';
+import { dashboard } from './18n.dashboard.component';
 
 export const i18n = {
     hu: {
@@ -12,7 +13,8 @@ export const i18n = {
         footer: footer.hu,
         register: register.hu,
         errros: errors.hu,
-        feedback: feedback.hu
+        feedback: feedback.hu,
+        dashboard: dashboard.hu
     },
     gb: {
         login: login.gb,
@@ -20,6 +22,7 @@ export const i18n = {
         footer: footer.gb,
         errors: errors.gb,
         register: register.gb,
-        feedback: feedback.gb
+        feedback: feedback.gb,
+        dashboard: dashboard.gb
     }
 };
