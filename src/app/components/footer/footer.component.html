@@ -9,7 +9,7 @@
             <li *ngFor="let item of news" class="news">
                 <h4><a [href]="item.url" target="_blank">{{ item.title }}</a></h4>
                 <p *ngIf="!!item.short else noText">{{ item.short }}</p>
-                <ng-template #noText>{{ i18n.footer.news.noText }}</ng-template>
+                <ng-template #noText><p>{{ i18n.footer.news.noText }}</p></ng-template>
             </li>
         </ul>
     </div>

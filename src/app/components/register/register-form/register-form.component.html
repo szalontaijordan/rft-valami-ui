@@ -1,0 +1,37 @@
+<form #registerForm="ngForm">
+  <div class="outer-form-group">
+    <div class="form-group">
+      <label for="lastName">{{ i18n.register.lastName }}</label>
+      <input [(ngModel)]="model.lastName" name="lastName" id="lastName" type="text" required #lastName="ngModel" />
+    </div>
+    <div class="form-group">
+      <label for="firstName">{{ i18n.register.firstName }}</label>
+      <input [(ngModel)]="model.firstName" name="firstName" id="firstName" type="text" required #firstName="ngModel" />
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="nickName">{{ i18n.register.nickName }}</label>
+    <input [(ngModel)]="model.nickName" name="nickName" id="nickName" type="text" #nickName="ngModel" />
+  </div>
+  <div class="form-group">
+    <label for="email">{{ i18n.register.email }}</label>
+    <input [(ngModel)]="model.email" name="email" id="email" type="text" required #email="ngModel" />
+  </div>
+  <div class="form-group">
+    <label for="username">{{ i18n.register.username }}</label>
+    <input [(ngModel)]="model.userName" name="username" id="username" type="text" required #username="ngModel" />
+  </div>
+  <div class="form-group">
+      <label for="passowrd">{{ i18n.register.password }}</label>
+      <input [(ngModel)]="model.password" name="passowrd" id="passowrd" [type]="isShowPassword ? 'text' : 'password'" required #password="ngModel" />
+      <i *ngIf="!isShowPassword" (click)="togglePassword()" class="fas fa-eye-slash"></i>
+      <i *ngIf="isShowPassword" (click)="togglePassword()" class="fas fa-eye"></i>
+  </div>
+  <div class="form-group">
+    <label for="passowrdAgain">{{ i18n.register.passwordAgain }}</label>
+    <input [(ngModel)]="model.passwordAgain" name="passowrdAgain" id="passowrdAgain" [type]="isShowPassword ? 'text' : 'password'" required #passowrdAgain="ngModel" />
+    <i *ngIf="!isShowPassword" (click)="togglePassword()" class="fas fa-eye-slash"></i>
+    <i *ngIf="isShowPassword" (click)="togglePassword()" class="fas fa-eye"></i>
+  </div>
+  <button class="btn btn-primary" [disabled]="!registerForm.valid" (click)="submit()">{{ i18n.header.login }}</button>
+</form>
