@@ -1,3 +1,7 @@
+section.info {
+    max-width: 310px;
+}
+
 .personal-info {
     position: relative;
     padding: 8px;
@@ -24,4 +28,8 @@
     max-width: 100%;
     height: auto;
     display: block;
+}
+
+.btn-success {
+    margin-right: 8px;
 }

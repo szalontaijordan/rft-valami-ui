@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { I18nService } from '../../../services/i18n/i18n.service';
 
 @Component({
@@ -7,6 +7,9 @@ import { I18nService } from '../../../services/i18n/i18n.service';
   styleUrls: ['./register-form.component.css']
 })
 export class RegisterFormComponent implements OnInit {
+
+  @Input()
+  submitText: string;
 
   @Output()
   register = new EventEmitter<any>();

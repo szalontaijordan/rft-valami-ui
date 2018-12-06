@@ -26,4 +26,9 @@ export class DashboardComponent implements OnInit {
     this.logger.log(this.i18n.header['login']);
   }
 
+  deleteUser() {
+    this.userService.isLoggedIn = false;
+    console.log('loggin out...');
+  }
+
 }

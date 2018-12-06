@@ -26,6 +26,7 @@ import { DashboardLogComponent } from './components/dashboard/dashboard-log/dash
 import { LoggerService } from './services/logger/logger.service';
 import { DashboardLoggerService } from './services/logger/dashboard/logger.service.dashboard';
 import { LoggedElementDirective } from './directives/logged-element.directive';
+import { NgxSmartModalModule } from 'ngx-smart-modal';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { LoggedElementDirective } from './directives/logged-element.directive';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxSmartModalModule.forRoot()
   ],
   providers: [
     { provide: UserService, useClass: MockUserService },

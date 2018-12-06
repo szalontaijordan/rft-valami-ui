@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { I18nService } from 'src/app/services/i18n/i18n.service';
+import { NgxSmartModalService } from 'ngx-smart-modal';
 
 @Component({
   selector: 'app-dashboard-info',
@@ -11,18 +12,44 @@ export class DashboardInfoComponent implements OnInit {
   @Input()
   user: any;
 
-  constructor(public i18n: I18nService) {
+  model = {
+    fullName: '',
+    password: '',
+    passwordAgain: '',
+    userName: ''
+  };
+
+  @Output()
+  deleteUser = new EventEmitter<void>();
+
+  isShowPassword: boolean = false;
+
+  constructor(public i18n: I18nService, public ngxSmartModalService: NgxSmartModalService) {
   }
 
   ngOnInit() {
+    this.model.fullName = this.user.fullName;
+    this.model.userName = this.user.userName;
+  }
+
+  togglePassword() {
+    this.isShowPassword = !this.isShowPassword;
   }
 
   editProfile() {
-    console.log('editing like a boss');
+    this.ngxSmartModalService.getModal('editModal').open();
   }
 
   deleteProfile() {
-    console.log('deleting like a boss');
+    this.ngxSmartModalService.getModal('deleteModal').open();
+  }
+
+  update() {
+    console.log(this.model);
+  }
+
+  delete() {
+    this.deleteUser.emit();
   }
 
 }

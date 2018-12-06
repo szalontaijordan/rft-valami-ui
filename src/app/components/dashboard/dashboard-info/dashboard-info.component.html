@@ -10,4 +10,34 @@
         <button class="btn btn-danger" (click)="deleteProfile()" appLoggedElement>{{ i18n.dashboard.info.delete }}</button>
       </div>
   </div>
+  <ngx-smart-modal #editModal identifier="editModal">
+    <form #editForm="ngForm">
+        <div class="form-group">
+          <label for="fullName">{{ i18n.dashboard.info.name }}</label>
+          <input [(ngModel)]="model.fullName" name="fullName" id="fullName" type="text" #fullName="ngModel" />
+        </div>
+        <div class="form-group">
+          <label for="username">{{ i18n.register.username }}</label>
+          <input [(ngModel)]="model.userName" name="username" id="username" type="text" required #username="ngModel" />
+        </div>
+        <div class="form-group">
+            <label for="passowrd">{{ i18n.register.password }}</label>
+            <input [(ngModel)]="model.password" name="passowrd" id="passowrd" [type]="isShowPassword ? 'text' : 'password'" required #password="ngModel" />
+            <i *ngIf="!isShowPassword" (click)="togglePassword()" class="fas fa-eye-slash"></i>
+            <i *ngIf="isShowPassword" (click)="togglePassword()" class="fas fa-eye"></i>
+        </div>
+        <div class="form-group">
+          <label for="passowrdAgain">{{ i18n.register.passwordAgain }}</label>
+          <input [(ngModel)]="model.passwordAgain" name="passowrdAgain" id="passowrdAgain" [type]="isShowPassword ? 'text' : 'password'" required #passowrdAgain="ngModel" />
+          <i *ngIf="!isShowPassword" (click)="togglePassword()" class="fas fa-eye-slash"></i>
+          <i *ngIf="isShowPassword" (click)="togglePassword()" class="fas fa-eye"></i>
+        </div>
+        <button class="btn btn-primary" [disabled]="!editForm.valid" (click)="submit()">{{ i18n.dashboard.info.edit }}</button>
+      </form>
+  </ngx-smart-modal>
+  <ngx-smart-modal #deleteModal identifier="deleteModal">
+    <p><strong>{{ i18n.dashboard.info.areYouSure.text }}</strong></p>
+    <button (click)="delete()" class="btn btn-success">{{ i18n.dashboard.info.areYouSure.yes }}</button>
+    <button (click)="deleteModal.close()" class="btn btn-danger">{{ i18n.dashboard.info.areYouSure.no }}</button>
+  </ngx-smart-modal>
 </section>
