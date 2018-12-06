@@ -7,6 +7,7 @@ export const dashboard: DashboardI18NTextResource = {
             role: 'Szerepkör',
             edit: 'Szerkesztés',
             delete: 'Törlés',
+            tbd: 'Ez a funkcionalitás még nem érhető el.',
             areYouSure: {
                 text: 'Épp törölni készülsz a saját felhasználódat. Biztos vagy benne, hogy ezt szeretnéd?',
                 yes: 'Igen',
@@ -32,6 +33,7 @@ export const dashboard: DashboardI18NTextResource = {
             role: 'Role',
             edit: 'Edit',
             delete: 'Delete',
+            tbd: 'This feature is not available yet',
             areYouSure: {
                 text: 'You are about to delete your own user. Are you sure?',
                 yes: 'Yes',
@@ -64,6 +66,7 @@ interface DashboardTextResource {
         role: string;
         edit: string;
         delete: string;
+        tbd: string;
         areYouSure: {
             text: string;
             yes: string;

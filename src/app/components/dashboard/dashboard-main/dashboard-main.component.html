@@ -1,6 +1,9 @@
 <section class="main">
-  <div class="tile subjects" appLoggedElement>{{ i18n.dashboard.main.subjects }}</div>
-  <div class="tile download" appLoggedElement>{{ i18n.dashboard.main.download }}</div>
-  <div class="tile upload" appLoggedElement>{{ i18n.dashboard.main.upload }}</div>
+  <div (click)="showTBDModal()" class="tile subjects" appLoggedElement>{{ i18n.dashboard.main.subjects }}</div>
+  <div (click)="showTBDModal()" class="tile download" appLoggedElement>{{ i18n.dashboard.main.download }}</div>
+  <div (click)="showTBDModal()" class="tile upload" appLoggedElement>{{ i18n.dashboard.main.upload }}</div>
   <div *ngIf="role === 'ADMIN'" class="tile all-users" appLoggedElement>{{ i18n.dashboard.main.allUsers }}</div>
+  <ngx-smart-modal #tbdModal identifier="tbdModal">
+    <p><strong>{{ i18n.dashboard.info.tbd }}</strong></p>
+  </ngx-smart-modal>
 </section>

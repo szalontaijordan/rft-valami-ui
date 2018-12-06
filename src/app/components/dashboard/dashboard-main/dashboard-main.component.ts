@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { I18nService } from 'src/app/services/i18n/i18n.service';
+import { NgxSmartModalService } from 'ngx-smart-modal';
 
 @Component({
   selector: 'app-dashboard-main',
@@ -11,9 +12,13 @@ export class DashboardMainComponent implements OnInit {
   @Input()
   role: string;
 
-  constructor(public i18n: I18nService) { }
+  constructor(public i18n: I18nService, public ngxSmartModalService: NgxSmartModalService) { }
 
   ngOnInit() {
+  }
+
+  showTBDModal() {
+    this.ngxSmartModalService.getModal('tbdModal').open();
   }
 
 }
