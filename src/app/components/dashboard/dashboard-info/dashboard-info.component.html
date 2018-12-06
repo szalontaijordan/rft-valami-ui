@@ -20,19 +20,7 @@
           <label for="username">{{ i18n.register.username }}</label>
           <input [(ngModel)]="model.userName" name="username" id="username" type="text" required #username="ngModel" />
         </div>
-        <div class="form-group">
-            <label for="passowrd">{{ i18n.register.password }}</label>
-            <input [(ngModel)]="model.password" name="passowrd" id="passowrd" [type]="isShowPassword ? 'text' : 'password'" required #password="ngModel" />
-            <i *ngIf="!isShowPassword" (click)="togglePassword()" class="fas fa-eye-slash"></i>
-            <i *ngIf="isShowPassword" (click)="togglePassword()" class="fas fa-eye"></i>
-        </div>
-        <div class="form-group">
-          <label for="passowrdAgain">{{ i18n.register.passwordAgain }}</label>
-          <input [(ngModel)]="model.passwordAgain" name="passowrdAgain" id="passowrdAgain" [type]="isShowPassword ? 'text' : 'password'" required #passowrdAgain="ngModel" />
-          <i *ngIf="!isShowPassword" (click)="togglePassword()" class="fas fa-eye-slash"></i>
-          <i *ngIf="isShowPassword" (click)="togglePassword()" class="fas fa-eye"></i>
-        </div>
-        <button class="btn btn-primary" [disabled]="!editForm.valid" (click)="submit()">{{ i18n.dashboard.info.edit }}</button>
+        <button class="btn btn-primary" [disabled]="!editForm.valid" (click)="update()">{{ i18n.dashboard.info.edit }}</button>
       </form>
   </ngx-smart-modal>
   <ngx-smart-modal #deleteModal identifier="deleteModal">

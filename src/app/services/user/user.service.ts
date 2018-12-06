@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 @Injectable()
 export abstract class UserService {
@@ -9,7 +9,7 @@ export abstract class UserService {
   };
 
   isLoggedIn: boolean;
-  currentUser: any;
+  currentUser: BehaviorSubject<any>;
 
   constructor() { }
 

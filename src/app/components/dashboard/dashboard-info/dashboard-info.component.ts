@@ -14,15 +14,14 @@ export class DashboardInfoComponent implements OnInit {
 
   model = {
     fullName: '',
-    password: '',
-    passwordAgain: '',
     userName: ''
   };
 
   @Output()
   deleteUser = new EventEmitter<void>();
 
-  isShowPassword: boolean = false;
+  @Output()
+  editUser = new EventEmitter<any>();
 
   constructor(public i18n: I18nService, public ngxSmartModalService: NgxSmartModalService) {
   }
@@ -30,10 +29,6 @@ export class DashboardInfoComponent implements OnInit {
   ngOnInit() {
     this.model.fullName = this.user.fullName;
     this.model.userName = this.user.userName;
-  }
-
-  togglePassword() {
-    this.isShowPassword = !this.isShowPassword;
   }
 
   editProfile() {
@@ -45,7 +40,8 @@ export class DashboardInfoComponent implements OnInit {
   }
 
   update() {
-    console.log(this.model);
+    this.editUser.emit(this.model);
+    this.ngxSmartModalService.close('editModal');
   }
 
   delete() {
