@@ -1,0 +1,32 @@
+section.main {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.tile {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    background-color: #7ca1ca;
+    margin: 0 16px 16px 0;
+    width: 250px;
+    height: 150px;
+    border: 2px solid #7ca1ca;
+    border-bottom-right-radius: 16px;
+    line-height: 150px;
+    vertical-align: middle;
+    text-align: center;
+    transform-origin: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tile.zoom {
+    transform: scale(1.1);
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+.tile.zoom:active {
+    transform: scale(1);
+}

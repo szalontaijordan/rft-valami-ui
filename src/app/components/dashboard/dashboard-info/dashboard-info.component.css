@@ -1,0 +1,35 @@
+section.info {
+    max-width: 310px;
+}
+
+.personal-info {
+    position: relative;
+    padding: 8px;
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    height: 500px;
+}
+
+.personal-info :not(.edit) {
+    margin-bottom: 8px;
+}
+
+.personal-info .edit {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+}
+
+.personal-info .edit .btn-secondary {
+    margin-right: 8px;
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.btn-success {
+    margin-right: 8px;
+}

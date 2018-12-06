@@ -1,0 +1,27 @@
+section.logger {
+    border-left: 1px solid #f0f0f0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    height: 450px;
+    overflow-y: scroll;
+}
+
+ul li {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+ul li::before {
+    content: '[INFO] ';
+}
+
+ul li:nth-child(2n - 1) {
+    border-left: 4px solid #00be29;
+}
+
+ul li:nth-child(2n) {
+    border-left: 4px solid #009e29;
+}

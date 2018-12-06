@@ -1,19 +1,20 @@
 import { Injectable } from '@angular/core';
 
 import { UserService } from '../user.service';
-import { of, Observable } from 'rxjs';
+import { of, Observable, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MockUserService extends UserService {
 
-  private dummyUser = {
+  public currentUser = new BehaviorSubject({
     userName: 'mockUser',
     fullName: 'Mock User',
     email: 'mock@mock.mock',
-    passowrd: 'mockpassword'
-  };
+    passowrd: 'mockpassword',
+    role: 'MOCK'
+  });
 
   constructor() {
     super();
@@ -21,7 +22,7 @@ export class MockUserService extends UserService {
   }
 
   isValid(userName: string, password: string): Observable<any> {
-    return of(this.dummyUser);
+    return of(this.currentUser);
   }
 
   upload(userName: string, password: string, fullName: string, email: string): Observable<any> {

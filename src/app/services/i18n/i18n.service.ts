@@ -6,6 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 import { RegisterI18NTextResource } from 'src/assets/i18n/i18n.register.component';
 import { ErrorsI18NTextResource } from 'src/assets/i18n/i18n.errors';
 import { FeedbackI18NTextResource } from 'src/assets/i18n/i18n.feedback.component';
+import { DashboardI18NTextResource } from 'src/assets/i18n/18n.dashboard.component';
 
 @Injectable()
 export abstract class I18nService {
@@ -27,5 +28,7 @@ export abstract class I18nService {
   abstract get errors(): ErrorsI18NTextResource;
 
   abstract get feedback(): FeedbackI18NTextResource;
-  
+
+  abstract get dashboard(): DashboardI18NTextResource;
+
 }
