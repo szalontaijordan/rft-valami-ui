@@ -8,6 +8,7 @@ export const dashboard: DashboardI18NTextResource = {
             edit: 'Szerkesztés',
             delete: 'Törlés',
             tbd: 'Ez a funkcionalitás még nem érhető el.',
+            adminDelete: 'Az ilyen módon való törlés azonnali és végleges, használja elővigyázatosan.',
             areYouSure: {
                 text: 'Épp törölni készülsz a saját felhasználódat. Biztos vagy benne, hogy ezt szeretnéd?',
                 yes: 'Igen',
@@ -34,6 +35,7 @@ export const dashboard: DashboardI18NTextResource = {
             edit: 'Edit',
             delete: 'Delete',
             tbd: 'This feature is not available yet',
+            adminDelete: 'Deleting a user here is instant and permanent, use this with caution.',
             areYouSure: {
                 text: 'You are about to delete your own user. Are you sure?',
                 yes: 'Yes',
@@ -67,6 +69,7 @@ interface DashboardTextResource {
         edit: string;
         delete: string;
         tbd: string;
+        adminDelete: string;
         areYouSure: {
             text: string;
             yes: string;

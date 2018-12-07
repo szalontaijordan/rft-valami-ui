@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { I18nService } from 'src/app/services/i18n/i18n.service';
 import { NgxSmartModalService } from 'ngx-smart-modal';
 
@@ -12,6 +12,12 @@ export class DashboardMainComponent implements OnInit {
   @Input()
   role: string;
 
+  @Input()
+  allUsers: Array<any>;
+
+  @Output()
+  delete = new EventEmitter<string>();
+
   constructor(public i18n: I18nService, public ngxSmartModalService: NgxSmartModalService) { }
 
   ngOnInit() {
@@ -19,6 +25,14 @@ export class DashboardMainComponent implements OnInit {
 
   showTBDModal() {
     this.ngxSmartModalService.getModal('tbdModal').open();
+  }
+
+  showAllUsersModal() {
+    this.ngxSmartModalService.getModal('allUsersModal').open();
+  }
+
+  deleteUser(id: string) {
+    this.delete.emit(id);
   }
 
 }

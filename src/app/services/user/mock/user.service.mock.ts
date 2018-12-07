@@ -13,7 +13,7 @@ export class MockUserService extends UserService {
     fullName: 'Mock User',
     email: 'mock@mock.mock',
     passowrd: 'mockpassword',
-    role: 'MOCK'
+    role: 'ADMIN'
   });
 
   constructor() {
@@ -42,10 +42,12 @@ export class MockUserService extends UserService {
 
     for (let i = 0; i < 20; i++) {
       mockUsers.push({
+        id: String(i),
         userName: `mockuser${i}`,
-        fullName: `Mock User (${i})`,
+        fullName: `Mock User${i}`,
         password: 'password1A',
-        email: `mockuser${i}@example.com`
+        email: `mockuser${i}@example.com`,
+        role: 'MOCK'
       });
     }
 

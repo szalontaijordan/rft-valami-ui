@@ -19,6 +19,8 @@ export class DashboardComponent implements OnInit {
     email: ''
   };
 
+  allUsers: Array<any>;
+
   constructor(private userService: UserService,
               private logger: LoggerService,
               private i18n: I18nService,
@@ -41,11 +43,20 @@ export class DashboardComponent implements OnInit {
     ).subscribe({
       next: user => this.currentUser = user
     });
+
+    this.userService.all().subscribe({
+      next: allUsers => this.allUsers = allUsers
+    });
   }
 
   deleteUser() {
     this.userService.isLoggedIn = false;
     this.router.navigate(['login']);
+  }
+
+  deleteUserById(id: string) {
+    this.allUsers = this.allUsers.filter(user => user.id !== id);
+    this.userService.remove(id);
   }
 
   updateUser(user) {
