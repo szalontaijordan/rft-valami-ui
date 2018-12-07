@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { I18nService } from 'src/app/services/i18n/i18n.service';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-feedback',
@@ -8,15 +10,16 @@ import { I18nService } from 'src/app/services/i18n/i18n.service';
 })
 export class FeedbackComponent implements OnInit {
 
-  constructor(public i18n: I18nService) {
+  constructor(private http: HttpClient, private router: Router, public i18n: I18nService) {
   }
 
   ngOnInit() {
   }
 
   sendEmail(email) {
-    // TODO
-    console.log(email);
+    this.http.post('/api/feedback', email).subscribe({
+      next: data => this.router.navigate([''])
+    });
   }
 
 }

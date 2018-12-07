@@ -30,19 +30,20 @@ export class FeedbackFormComponent implements OnInit {
   private createEmailFromModel() {
     const { fromName, fromEmail, text } = this.model;
 
-    const to = 'rft.valami@example.com';
+    const to = 'rft.valami.2018@gmail.com';
     const subject = `RFT Valami feedback - ${new Date().toLocaleDateString()}`;
-    const body = `
+    const html = `
       <h1>Feedback from ${fromName}</h1>
       <p>Date of feedback: ${new Date().toLocaleDateString()}</p>
       <pre>${text}</pre>
+      <p>E-mail: ${fromEmail}</p>
     `;
 
     return {
       fromEmail,
       to,
       subject,
-      body
+      html
     };
   }
 

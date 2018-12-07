@@ -2,13 +2,15 @@
   "name": "rft-valami-ui",
   "version": "0.0.0",
   "scripts": {
+    "dev-ui": "ng build --watch",
+    "start": "node app.js",
     "ng": "ng",
-    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "main": "server/app.js",
   "private": true,
   "dependencies": {
     "@angular/animations": "~7.0.0",
@@ -21,7 +23,9 @@
     "@angular/platform-browser-dynamic": "~7.0.0",
     "@angular/router": "~7.0.0",
     "core-js": "^2.5.4",
+    "express": "^4.16.4",
     "ngx-smart-modal": "^7.1.0",
+    "nodemailer": "^4.7.0",
     "rxjs": "~6.3.3",
     "zone.js": "~0.8.26"
   },
