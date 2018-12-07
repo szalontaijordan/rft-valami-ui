@@ -30,3 +30,31 @@ section.main {
 .tile.zoom:active {
     transform: scale(1);
 }
+
+.all-users-list {
+    list-style: none;
+    padding: 0;
+}
+
+.all-users-list li {
+    border-radius: 16px;
+    padding: 0 0 0 16px;
+    background-color: #7ca1ca;
+    color: white;
+    margin: 8px auto;
+    display: inline-block;
+}
+
+.all-users-list li span {
+    display: inline-block;
+}
+
+.all-users-list li button.delete {
+    margin-left: 16px;
+    cursor: pointer;
+}
+
+.alert-text {
+    padding-bottom: 16px;
+    border-bottom: 2px solid red;
+}
