@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
       next: data => {
         // TODO we might want to set some token here?
         this.userService.isLoggedIn = true;
-        this.userService.currentUser = data;
+        this.userService.currentUser.next(data);
         this.router.navigate(['dashboard']);
       }
     });

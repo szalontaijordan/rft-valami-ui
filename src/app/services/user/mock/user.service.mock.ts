@@ -8,21 +8,22 @@ import { of, Observable, BehaviorSubject } from 'rxjs';
 })
 export class MockUserService extends UserService {
 
-  public currentUser = new BehaviorSubject({
+  private mockUser = {
     userName: 'mockUser',
     fullName: 'Mock User',
     email: 'mock@mock.mock',
     passowrd: 'mockpassword',
     role: 'ADMIN'
-  });
+  }
 
   constructor() {
     super();
     this.isLoggedIn = false;
+    this.currentUser = new BehaviorSubject<any>(null);
   }
 
   isValid(userName: string, password: string): Observable<any> {
-    return of(this.currentUser);
+    return of(this.mockUser);
   }
 
   upload(userName: string, password: string, fullName: string, email: string): Observable<any> {

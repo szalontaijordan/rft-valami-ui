@@ -31,14 +31,18 @@ export class DashboardComponent implements OnInit {
     this.logger.log(this.i18n.header['login']);
     this.userService.currentUser.pipe(
       map(user => {
-        const { email, fullName, userName, role } = user;
+        if (user) {
+          const { email, fullName, userName, role } = user;
         
-        return {
-          fullName,
-          userName,
-          role,
-          email
-        };
+          return {
+            fullName,
+            userName,
+            role,
+            email
+          };
+        }
+        
+        return null;
       })
     ).subscribe({
       next: user => this.currentUser = user
