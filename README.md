@@ -44,4 +44,4 @@ $ node app.js
 ```
 $ npm run dev-ui
 ```
-2. Open the browser at `localhost`
+2. Open the browser at `localhost:3000`
