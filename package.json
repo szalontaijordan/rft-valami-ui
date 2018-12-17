@@ -4,7 +4,7 @@
   "scripts": {
     "dev-ui": "ng build --watch",
     "start": "node app.js",
-    "prestart": "ng build --prod",
+    "postinstall": "ng build --prod",
     "ng": "ng",
     "build": "ng build",
     "test": "ng test",
@@ -23,6 +23,8 @@
     "@angular/platform-browser": "~7.0.0",
     "@angular/platform-browser-dynamic": "~7.0.0",
     "@angular/router": "~7.0.0",
+    "@angular/cli": "~7.0.3",
+    "@angular/compiler-cli": "~7.0.0",
     "core-js": "^2.5.4",
     "express": "^4.16.4",
     "ngx-smart-modal": "^7.1.0",
@@ -32,8 +34,6 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.10.0",
-    "@angular/cli": "~7.0.3",
-    "@angular/compiler-cli": "~7.0.0",
     "@angular/language-service": "~7.0.0",
     "@types/node": "~8.9.4",
     "@types/jasmine": "~2.8.8",
