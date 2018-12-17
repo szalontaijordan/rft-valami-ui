@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HeaderI18NTextResource } from '../../../assets/i18n/i18n.header.component';
-import { LoginI18NTextResource } from '../../../assets/i18n/i18n.login.component';
-import { FooterI18NTextResource } from '../../../assets/i18n/i18n.footer.component';
 import { BehaviorSubject } from 'rxjs';
-import { RegisterI18NTextResource } from 'src/assets/i18n/i18n.register.component';
-import { ErrorsI18NTextResource } from 'src/assets/i18n/i18n.errors';
-import { FeedbackI18NTextResource } from 'src/assets/i18n/i18n.feedback.component';
-import { DashboardI18NTextResource } from 'src/assets/i18n/18n.dashboard.component';
+import { HeaderTextResource } from '../../../assets/i18n/i18n.header.component';
+import { LoginTextResource } from '../../../assets/i18n/i18n.login.component';
+import { FooterTextResource } from '../../../assets/i18n/i18n.footer.component';
+import { RegisterTextResource } from '../../../assets/i18n/i18n.register.component';
+import { ErrorsTextResource } from '../../../assets/i18n/i18n.errors';
+import { FeedbackTextResource } from '../../../assets/i18n/i18n.feedback.component';
+import { DashboardTextResource } from '../../../assets/i18n/18n.dashboard.component';
 
 @Injectable()
 export abstract class I18nService {
@@ -17,18 +17,18 @@ export abstract class I18nService {
   constructor() {
   }
 
-  abstract get header(): HeaderI18NTextResource;
+  abstract get header(): HeaderTextResource;
 
-  abstract get login(): LoginI18NTextResource;
+  abstract get login(): LoginTextResource;
 
-  abstract get footer(): FooterI18NTextResource;
+  abstract get footer(): FooterTextResource;
 
-  abstract get register(): RegisterI18NTextResource;
+  abstract get register(): RegisterTextResource;
 
-  abstract get errors(): ErrorsI18NTextResource;
+  abstract get errors(): ErrorsTextResource;
 
-  abstract get feedback(): FeedbackI18NTextResource;
+  abstract get feedback(): FeedbackTextResource;
 
-  abstract get dashboard(): DashboardI18NTextResource;
+  abstract get dashboard(): DashboardTextResource;
 
 }

@@ -38,7 +38,7 @@ export interface FooterI18NTextResource {
     gb: FooterTextResource;
 }
 
-interface FooterTextResource {
+export interface FooterTextResource {
     news: {
         title: string;
         feed: string;

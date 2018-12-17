@@ -28,7 +28,7 @@ export interface FeedbackI18NTextResource {
     gb: FeedbackTextResource;
 }
 
-interface FeedbackTextResource {
+export interface FeedbackTextResource {
     title: string;
     explanation: string;
     name: string;

@@ -66,7 +66,7 @@ export interface LoginI18NTextResource {
     gb: LoginTextResource;
 }
 
-interface LoginTextResource {
+export interface LoginTextResource {
     title: string;
     username: string;
     password: string;

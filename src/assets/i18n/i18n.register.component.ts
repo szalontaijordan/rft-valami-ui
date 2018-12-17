@@ -26,7 +26,7 @@ export interface RegisterI18NTextResource {
     gb: RegisterTextResource;
 }
 
-interface RegisterTextResource {
+export interface RegisterTextResource {
     title: string;
     username: string;
     password: string;

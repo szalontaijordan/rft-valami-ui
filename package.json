@@ -4,6 +4,7 @@
   "scripts": {
     "dev-ui": "ng build --watch",
     "start": "node app.js",
+    "prestart": "ng build --prod",
     "ng": "ng",
     "build": "ng build",
     "test": "ng test",

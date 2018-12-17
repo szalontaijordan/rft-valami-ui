@@ -20,7 +20,7 @@ export interface HeaderI18NTextResource {
     gb: HeaderTextResource;
 }
 
-interface HeaderTextResource {
+export interface HeaderTextResource {
    register: string;
    login: string;
    logout: string;

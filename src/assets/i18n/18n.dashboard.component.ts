@@ -60,7 +60,7 @@ export interface DashboardI18NTextResource {
     gb: DashboardTextResource;
 }
 
-interface DashboardTextResource {
+export interface DashboardTextResource {
     info: {
         title: string;
         name: string;

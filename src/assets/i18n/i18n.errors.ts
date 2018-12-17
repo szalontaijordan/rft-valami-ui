@@ -17,7 +17,7 @@ export interface ErrorsI18NTextResource {
     gb: ErrorsTextResource;
 }
 
-interface ErrorsTextResource {
+export interface ErrorsTextResource {
     invalidCredentials: string,
     common: string,
     required: string
