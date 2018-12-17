@@ -7,7 +7,6 @@
 }
 
 .register-form {
-    width: 50%;
     margin: 0 auto;
 }
 
@@ -15,4 +14,11 @@ h1 {
     text-align: center;
     margin-top: 0;
     margin-bottom: 64px;
+}
+
+@media (min-width: 1024px) {
+    .register-form {
+        width: 50%;
+    }
+        
 }

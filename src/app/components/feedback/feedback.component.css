@@ -1,7 +1,10 @@
-.feedback-form {
-    background-color: #fff;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    padding: 16px;
-    margin: 32px auto;
-    width: 50%;
+@media(min-width: 1024px) {
+    .feedback-form {
+        background-color: #fff;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        padding: 16px;
+        margin: 32px auto;
+        width: 50%;
+    }
+    
 }

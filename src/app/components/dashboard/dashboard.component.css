@@ -1,21 +1,38 @@
-section.dashboard {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-}
-
 .personal, .features, .log {
     padding: 8px;
 }
 
-.personal {
-    width: 25%;
+@media (min-width: 768px) {
+    section.dashboard {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+    
+    .personal {
+        width: 33%;
+    }
+    
+    .features {
+        width: 67%;
+    }
+    
+    .log {
+        width: 100%;
+    }
+    
 }
 
-.features {
-    width: 50%;
-}
-
-.log {
-    width: 25%;
+@media (min-width: 1366px) {
+    .personal {
+        width: 25%;
+    }
+    
+    .features {
+        width: 50%;
+    }
+    
+    .log {
+        width: 25%;
+    }
 }

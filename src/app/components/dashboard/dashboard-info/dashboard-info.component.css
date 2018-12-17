@@ -1,5 +1,6 @@
 section.info {
     max-width: 310px;
+    margin: 0 auto;
 }
 
 .personal-info {
@@ -26,6 +27,7 @@ section.info {
 
 .image img {
     max-width: 100%;
+    width: 310px;
     height: auto;
     display: block;
 }

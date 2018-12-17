@@ -1,6 +1,7 @@
 section.main {
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
 }
 
 .tile {
@@ -10,11 +11,11 @@ section.main {
     color: #fff;
     background-color: #7ca1ca;
     margin: 0 16px 16px 0;
-    width: 250px;
-    height: 150px;
+    width: 220px;
+    height: 120px;
     border: 2px solid #7ca1ca;
     border-bottom-right-radius: 16px;
-    line-height: 150px;
+    line-height: 120px;
     vertical-align: middle;
     text-align: center;
     transform-origin: center;
@@ -32,13 +33,14 @@ section.main {
 }
 
 .all-users-list {
+    text-align: center;
     list-style: none;
     padding: 0;
 }
 
 .all-users-list li {
-    border-radius: 16px;
-    padding: 0 0 0 16px;
+    border-radius: 4px;
+    padding: 8px;
     background-color: #7ca1ca;
     color: white;
     margin: 8px auto;
@@ -48,13 +50,38 @@ section.main {
 .all-users-list li span {
     display: inline-block;
 }
-
+    
 .all-users-list li button.delete {
-    margin-left: 16px;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 16px;
+    display: block;
     cursor: pointer;
 }
 
 .alert-text {
     padding-bottom: 16px;
     border-bottom: 2px solid red;
+}
+
+@media (min-width: 768px) {
+    .all-users-list li button.delete {
+        margin-left: 16px;
+        width: initial;
+        margin: initial;
+        display: inline-block;
+    }
+
+    .all-users-list li {
+        border-radius: 16px;
+        padding: 0 0 0 16px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .tile {
+        width: 250px;
+        height: 150px;
+        line-height: 150px;
+    }
 }

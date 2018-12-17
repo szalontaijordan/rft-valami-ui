@@ -1,19 +1,18 @@
 section.login {
-    margin: 0 auto;
     display: flex;
-    flex-flow: row nowrap;
     justify-content: space-between;
+    flex-flow: column-reverse nowrap;
+    margin: 0 auto;
 }
 
 .login > div[class] {
     flex-grow: 1;
     flex-basis: 0;
     padding: 16px;
-    max-width: 33%;
 }
 
 .login > div[class]:not(:last-child) {
-    margin-right: 32px;
+    margin-bottom: 32px;
 }
 
 .description {
@@ -28,11 +27,27 @@ section.login {
 }
 
 .image {
-    max-width: 332px;
+    min-width: 224px;
+    max-width: 500px;
+    margin: 0 auto;
     text-align: center;
 }
 
 .credentials h1 {
     text-align: center;
     margin-bottom: 64px;
+}
+
+@media (min-width: 1024px) {
+    section.login {
+        flex-flow: row nowrap;
+    }
+
+    .login > div[class] {
+        max-width: 33%;
+    }
+
+    .login > div[class]:not(:last-child) {
+        margin-right: 32px;
+    }
 }

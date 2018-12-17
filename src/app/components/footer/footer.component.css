@@ -1,16 +1,6 @@
 footer {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
     padding: 16px;
     background-color: #4e4a6b;
-}
-
-.space, .info, .feed {
-    border-radius: 4px;
-    flex-grow: 1;
-    flex-basis: 0;
 }
 
 .space {
@@ -27,8 +17,22 @@ footer {
     margin: 0 auto;
 }
 
+.info ul, .info div {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.space, .info, .feed {
+    border-radius: 4px;
+    margin-bottom: 16px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .feed {
     margin: 0 16px;
+    margin-bottom: 16px;
     padding: 16px;
     background-color: #fff;
     height: 300px;
@@ -51,4 +55,22 @@ footer {
 .feed p {
     margin-top: 8px;
     margin-bottom: 16px;
+}
+
+@media (min-width: 1024px) {
+    footer {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .space, .info, .feed {
+        border-radius: 4px;
+        flex-grow: 1;
+        flex-basis: 0;
+        margin-bottom: 0;
+    }
+    
+
 }

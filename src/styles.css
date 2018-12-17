@@ -20,12 +20,18 @@ h1 {
     font-size: 24px;
 }
 
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
 .layout {
     padding: 16px;
 }
 
 section {
-    padding: 16px;
+    padding: 0;
 }
 
 .form-group {
@@ -57,22 +63,6 @@ section {
 
 .form-group textarea {
     width: 100%;
-}
-
-.outer-form-group {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-content: space-between;
-}
-
-.outer-form-group .form-group {
-    width: 50%;
-
-}
-
-.outer-form-group .form-group:not(:last-child) {
-    margin-right: 32px;
 }
 
 a.link {
@@ -165,4 +155,26 @@ i[class*="fa-eye"] {
 
 .ng-invalid[required], .ng-invalid.required  {
     border-left: 5px solid rgb(169, 66, 66); 
+}
+
+@media (min-width: 1024px) {
+    section {
+        padding: 16px;
+    }
+    
+    .outer-form-group {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-content: space-between;
+    }
+
+    .outer-form-group .form-group {
+        width: 50%;
+    }
+    
+    .outer-form-group .form-group:not(:last-child) {
+        margin-right: 32px;
+    }
+    
 }
