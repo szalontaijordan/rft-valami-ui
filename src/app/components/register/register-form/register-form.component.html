@@ -29,9 +29,11 @@
   </div>
   <div class="form-group">
     <label for="passowrdAgain">{{ i18n.register.passwordAgain }}</label>
-    <input [(ngModel)]="model.passwordAgain" name="passowrdAgain" id="passowrdAgain" [type]="isShowPassword ? 'text' : 'password'" required #passowrdAgain="ngModel" />
+    <input [ngClass]="{'password-match': this.model.passwordAgain === this.model.password}"
+          [(ngModel)]="model.passwordAgain" name="passowrdAgain" id="passowrdAgain" [type]="isShowPassword ? 'text' : 'password'" required #passowrdAgain="ngModel" />
     <i *ngIf="!isShowPassword" (click)="togglePassword()" class="fas fa-eye-slash"></i>
     <i *ngIf="isShowPassword" (click)="togglePassword()" class="fas fa-eye"></i>
+    <div *ngIf="!isPasswordCorrect">{{ i18n.errors.mustMatch }}</div>
   </div>
   <button class="btn btn-primary" [disabled]="!registerForm.valid" (click)="submit()">{{ submitText }}</button>
 </form>

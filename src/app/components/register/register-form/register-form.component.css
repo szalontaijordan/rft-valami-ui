@@ -1,0 +1,7 @@
+#passowrdAgain.ng-valid[required] {
+    border-left: 5px solid rgb(169, 66, 66);
+}
+
+#passowrdAgain.ng-valid[required].password-match {
+    border-left: 5px solid #42A948;
+}

@@ -1,9 +1,9 @@
 export const feedback: FeedbackI18NTextResource = {
     hu: {
         title: 'Adjon visszajelzést',
-        explanation: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur laboriosam non perspiciatis est
-                      praesentium dicta mollitia nam eum dolore, omnis impedit cupiditate provident eius quas! Ex facilis
-                      quasi nobis omnis.`,
+        explanation: `Amennyiben hibát észlelt, véleményt nyilvánítana, esetleg ötlete támadt, kérjük írjon
+                         pár sort. Mindenki véleménye fontos számunkra, ezek mintegy útmutató, formálják
+                         oldalunk útját, javítják hibáit!`,
         name: 'Név',
         email: 'E-mail cím',
         send: 'Küldés',
@@ -12,9 +12,9 @@ export const feedback: FeedbackI18NTextResource = {
     },
     gb: {
         title: 'Give feedback',
-        explanation: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur laboriosam non perspiciatis est
-                      praesentium dicta mollitia nam eum dolore, omnis impedit cupiditate provident eius quas! Ex facilis
-                      quasi nobis omnis.`,
+        explanation: `In case you found something buggy, or you would like to give feedback, or you have a suggestion
+                        please leave a few lines. Everyone's feedback is appreciated as a guideline to tailor
+                        our application as you wish.`,
         name: 'Name',
         email: 'E-mail address',
         send: 'Send',

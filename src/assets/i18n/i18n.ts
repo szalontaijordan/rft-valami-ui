@@ -12,7 +12,7 @@ export const i18n = {
         header: header.hu,
         footer: footer.hu,
         register: register.hu,
-        errros: errors.hu,
+        errors: errors.hu,
         feedback: feedback.hu,
         dashboard: dashboard.hu
     },

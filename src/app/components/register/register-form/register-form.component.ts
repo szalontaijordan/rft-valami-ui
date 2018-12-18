@@ -14,7 +14,7 @@ export class RegisterFormComponent implements OnInit {
   @Output()
   register = new EventEmitter<any>();
 
-  isShowPassword: boolean = false;
+  isShowPassword = false;
 
   model = {
     userName: '',
@@ -24,7 +24,7 @@ export class RegisterFormComponent implements OnInit {
     firstName: '',
     lastName: '',
     nickName: ''
-  }
+  };
 
   constructor(public i18n: I18nService) { }
 
@@ -32,7 +32,7 @@ export class RegisterFormComponent implements OnInit {
   }
 
   submit() {
-    if (this.isPasswordCorrect()) {
+    if (this.isPasswordCorrect) {
       this.register.emit(this.createUserFromModel());
     }
     return false;
@@ -42,8 +42,8 @@ export class RegisterFormComponent implements OnInit {
     this.isShowPassword = !this.isShowPassword;
   }
 
-  private isPasswordCorrect(): boolean {
-    const { password, passwordAgain } = this.model
+  get isPasswordCorrect(): boolean {
+    const { password, passwordAgain } = this.model;
     const passwordMatch = password === passwordAgain;
     const numbers = !!password.match(/[0-9]/g);
     const capital = !!password.match(/[A-Z]/g);
@@ -61,6 +61,6 @@ export class RegisterFormComponent implements OnInit {
       email,
       password,
       fullName: `${lastName} ${firstName}${nick}`
-    }
+    };
   }
 }

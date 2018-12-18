@@ -8,23 +8,30 @@ export const login: LoginI18NTextResource = {
             title: 'Leírás',
             text: [
                 {
-                    title: 'Lorem',
-                    short: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend sit amet
-                            turpis at euismod. Nulla facilisi.`
+                    title: 'Kedves Látogató!',
+                    short: `Oldalunk célja az oktatók és a diákok közti szakadék áthidalása. Tanárok és diákok egyaránt
+                             megtalálják a számukra leginkább hasznos funkciókat. Bejelentkezés után eldöntheted, mit
+                             szeretnél: tanulni, esetleg megosztani tudásod, jegyzeted. Az együttműködés lesz sikerünk kulcsa!
+                    `
                 },
                 {
-                    title: 'Ipsum',
-                    short: `Cras elementum, leo in malesuada aliquet, diam est elementum risus, ac lobortis eros ex
-                            in sem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus 
-                            mus. Cras ex lorem, lacinia vitae eros feugiat, dignissim aliquam lacus. Nunc odio odio,
-                            consectetur sed aliquam vel, ultrices id erat.`
+                    title: 'Oktatók',
+                    short: `A felgyorsult világban elengedhetetlen, hogy az internet is az oktatás színterévé váljon.
+                             A diákok kezében ma már nem füzetek és könyvek vannak, hanem telefonok és egyéb okos eszközök.
+                             Az oldal lehetőséget biztosít tantárgyak létrehozására, azokon belül tanulók hozzáadására,
+                             akik közt bármilyen segédlet, tananyag esetleg házi feladat megosztható. Miért kellene a tanári
+                             szobában a fénymásoló előtt sorban állni, ha egyszerűen oszthatjuk meg tudásunk
+                             diákjainkkal?
+                    `
                 },
                 {
-                    title: 'Dolor',
-                    short: `Nulla facilisi. Mauris erat enim, consequat vitae elit ut, varius sollicitudin odio. In in
-                            ex a arcu fermentum tempor non et odio. Suspendisse aliquet ipsum vel odio scelerisque 
-                            convallis. Praesent vehicula dignissim dictum. Donec cursus tincidunt orci eget porttitor. 
-                            Suspendisse potenti. Morbi vitae sagittis nisl. Fusce sed purus non purus fermentum tempus.`
+                    title: 'Diákok',
+                    short: `Valószínű, hogy valamelyik oktatótok által találtatok az oldalra. Ha mégsem, akkor a tudásvágy lehet
+                             az oka. Mindenképp azt szeretnénk, ha a tanulás egy hasznos játék, mintsem teher lenne. Az oldalon számtalan
+                             tantárgy és hozzá tartozó segédlet, jegyzet, gyakorló feladat található, melyek segíthetik felkészülésetek.
+                             Talán mire legközelebb beléptek, már egy csoport tagjai lesztek, ahol együtt fejleszthetitek tudásotokat.
+                             A tudás hatalom, melynek ezentúl semmi sem szabhat határt!
+                    `
                 }
            ]
         }
@@ -38,23 +45,22 @@ export const login: LoginI18NTextResource = {
             title: 'Description',
             text: [
                 {
-                    title: 'Lorem',
-                    short: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend sit amet
-                            turpis at euismod. Nulla facilisi.`
+                    title: 'Dear Visitor!',
+                    short: `The purpose of this site is to create a connection between the students and the teachers. All of them
+                             can find the useful information they need. After you log in you can decide how you would like to proceed,
+                             learn, share your knowledge. Sharing is the key to everything.`
                 },
                 {
-                    title: 'Ipsum',
-                    short: `Cras elementum, leo in malesuada aliquet, diam est elementum risus, ac lobortis eros ex
-                            in sem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus 
-                            mus. Cras ex lorem, lacinia vitae eros feugiat, dignissim aliquam lacus. Nunc odio odio,
-                            consectetur sed aliquam vel, ultrices id erat.`
+                    title: 'Teachers',
+                    short: `Nowadays internet connection is essential for education. Students prefer holding a smart phone or some other
+                     device rather than an exercise book. This site enables you to create subjects, assign students, manage your homework
+                     and share it if needed. Why would you queue in front of the copier, when you can easily share everything?`
                 },
                 {
-                    title: 'Dolor',
-                    short: `Nulla facilisi. Mauris erat enim, consequat vitae elit ut, varius sollicitudin odio. In in
-                            ex a arcu fermentum tempor non et odio. Suspendisse aliquet ipsum vel odio scelerisque 
-                            convallis. Praesent vehicula dignissim dictum. Donec cursus tincidunt orci eget porttitor. 
-                            Suspendisse potenti. Morbi vitae sagittis nisl. Fusce sed purus non purus fermentum tempus.`
+                    title: 'Students',
+                    short: `There's a high chance that you found this site because one of your teachers. If not, you have a desigre for
+                             for knowledge. We'd love to look at studying like fun rather than a burden. On this site you can find numerous
+                             materials for studying. Knowledge is power!`
                 }
            ]
         }
