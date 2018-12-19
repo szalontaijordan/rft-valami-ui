@@ -49,10 +49,11 @@ section.main {
     overflow: hidden;
     text-overflow: ellipsis;
     padding: 16px;
+    width: 100%;
 }
 
 .all-users-list li span {
-    display: inline-block;
+    display: block;
 }
     
 .all-users-list li button.delete {
@@ -83,6 +84,10 @@ section.main {
 
     .all-users-list li {
         border-radius: 16px;
+    }
+    
+    .all-users-list li span {
+        display: inline-block;
     }
 }
 
