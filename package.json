@@ -1,6 +1,6 @@
 {
   "name": "rft-valami-ui",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "dev-ui": "ng build --watch",
     "start": "node app.js",

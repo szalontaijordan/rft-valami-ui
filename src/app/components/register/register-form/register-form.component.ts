@@ -57,7 +57,7 @@ export class RegisterFormComponent implements OnInit {
     const nick =  nickName ? `(${nickName})` : '';
 
     return {
-      username,
+      username: username.toLowerCase(),
       email,
       password,
       firstName,

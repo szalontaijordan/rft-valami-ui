@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
     this.userService.authenticate(userName, password).subscribe({
       next: data => {
         this.userService.authToken = data['access_token'];
-        this.userService.getCurrentUser(userName).subscribe(user => {
+        this.userService.getCurrentUser(userName.toLowerCase()).subscribe(user => {
           this.router.navigate(['dashboard']);
         });
       },
