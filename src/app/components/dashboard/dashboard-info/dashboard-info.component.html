@@ -2,26 +2,35 @@
   <div class="personal-info">
     <h1>{{ i18n.dashboard.info.title }}</h1>
     <div class="image"><img src="https://image.shutterstock.com/image-vector/avatar-man-icon-profile-placeholder-260nw-1229859850.jpg" alt="Profile picture"></div>
-    <div class="name"> <strong>{{ i18n.dashboard.info.name }}</strong>&nbsp;{{ user.fullName }}</div>
-    <div class="email"> <strong>{{ i18n.dashboard.info.email }}</strong>&nbsp;{{ user.email }}</div>
-    <div class="role"> <strong>{{ i18n.dashboard.info.role }}</strong>&nbsp;{{ user.role }}</div>
+    <div class="name"> <div><strong>{{ i18n.dashboard.info.name }}</strong></div>{{ user.fullName }}</div>
+    <div class="email"> <div><strong>{{ i18n.dashboard.info.email }}</strong></div>{{ user.email }}</div>
+    <div class="role"> <div><strong>{{ i18n.dashboard.info.role }}</strong></div>{{ user.role }}</div>
     <div class="edit">
-        <button class="btn btn-secondary" (click)="editProfile()" appLoggedElement>{{ i18n.dashboard.info.edit }}</button>
-        <button class="btn btn-danger" (click)="deleteProfile()" appLoggedElement>{{ i18n.dashboard.info.delete }}</button>
+        <button *ngIf="user.role === 'ADMIN_USER'" class="btn btn-secondary" (click)="editProfile()" appLoggedElement>{{ i18n.dashboard.info.edit }}</button>
+        <button *ngIf="user.role === 'ADMIN_USER'" class="btn btn-danger" (click)="deleteProfile()" appLoggedElement>{{ i18n.dashboard.info.delete }}</button>
       </div>
   </div>
   <ngx-smart-modal #editModal identifier="editModal">
     <form #editForm="ngForm">
-        <div class="form-group">
-          <label for="fullName">{{ i18n.dashboard.info.name }}</label>
-          <input [(ngModel)]="model.fullName" name="fullName" id="fullName" type="text" #fullName="ngModel" />
-        </div>
-        <div class="form-group">
-          <label for="username">{{ i18n.register.username }}</label>
-          <input [(ngModel)]="model.userName" name="username" id="username" type="text" required #username="ngModel" />
-        </div>
-        <button class="btn btn-primary" [disabled]="!editForm.valid" (click)="update()">{{ i18n.dashboard.info.edit }}</button>
-      </form>
+      <div class="form-group">
+        <p>{{ i18n.dashboard.info.editModalText }}</p>
+      </div>
+      <div class="form-group">
+        <label for="fullName">{{ i18n.dashboard.info.name }}</label>
+        <input [(ngModel)]="model.fullName" name="fullName" id="fullName" type="text" #fullName="ngModel" />
+      </div>
+      <div class="form-group">
+        <label for="username">{{ i18n.register.username }}</label>
+        <input [(ngModel)]="model.username" name="username" id="username" type="text" required #username="ngModel" />
+      </div>
+      <div class="form-group">
+        <label for="password">{{ i18n.register.password }}</label>
+        <input [(ngModel)]="model.password" name="passowrd" id="passowrd" [type]="isShowPassword ? 'text' : 'password'" required #password="ngModel" />
+        <i *ngIf="!isShowPassword" (click)="togglePassword()" class="fas fa-eye-slash"></i>
+        <i *ngIf="isShowPassword" (click)="togglePassword()" class="fas fa-eye"></i>
+      </div>
+      <button class="btn btn-primary" [disabled]="!editForm.valid" (click)="update()">{{ i18n.dashboard.info.edit }}</button>
+    </form>
   </ngx-smart-modal>
   <ngx-smart-modal #deleteModal identifier="deleteModal">
     <p><strong>{{ i18n.dashboard.info.areYouSure.text }}</strong></p>

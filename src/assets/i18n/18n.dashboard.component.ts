@@ -13,7 +13,8 @@ export const dashboard: DashboardI18NTextResource = {
                 text: 'Épp törölni készülsz a saját felhasználódat. Biztos vagy benne, hogy ezt szeretnéd?',
                 yes: 'Igen',
                 no: 'Nem'
-            }
+            },
+            editModalText: 'A szerkesztés csak akkor lehetséges, ha új jelszót adsz meg.'
         },
         main: {
             subjects: 'Tárgyak',
@@ -40,7 +41,8 @@ export const dashboard: DashboardI18NTextResource = {
                 text: 'You are about to delete your own user. Are you sure?',
                 yes: 'Yes',
                 no: 'No'
-            }
+            },
+            editModalText: 'Editing is only available if you also change your password.'
         },
         main: {
             subjects: 'Subjects',
@@ -74,7 +76,8 @@ export interface DashboardTextResource {
             text: string;
             yes: string;
             no: string;
-        }
+        },
+        editModalText: string;
     };
     main: {
         subjects: string;

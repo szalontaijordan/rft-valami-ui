@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { LOGIN_API } from '../../../app.api.routes';
-import { UserService } from '../user.service';
-import { of, Observable } from 'rxjs';
+import { UserService, User } from '../user.service';
+import { of, Observable, BehaviorSubject } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -12,35 +12,63 @@ export class RemoteUserService extends UserService {
 
   constructor(private http: HttpClient) {
     super();
+    this.currentUser = new BehaviorSubject(null);
   }
 
-  isValid(userName: string, password: string) {
-    const body = { userName, password };
-    const headers = { ...this.headers };
-
-    return this.http.post(`${LOGIN_API}/isValid`, { headers, body });
+  authenticate(username: string, password: string) {
+    return this.http.post('/api/oauth/token', { username, password });
   }
 
-  upload(user_name: string, password: string, full_name: string, email: string) {
-    return this.fullUserPOST('upload', user_name, password, full_name, email);
+  getCurrentUser(username: string) {
+    return this.all().pipe(
+      map(result => {
+        const current = result.find(user => user.username === username);
+        this.currentUser.next(current);
+        return current;
+      })
+    );
   }
 
-  update(user_name: string, password: string, full_name: string, email: string) {
-    return this.fullUserPOST('update', user_name, password, full_name, email);
+  isValid() {
+    return of(this.authToken);
+  }
+
+  upload(username: string, password: string, firstName: string, lastName: string, email: string) {
+    const roles = [
+      {
+        id: 1,
+        roleName: 'STANDARD_USER',
+        description: 'Standard User - Has no admin rights'
+      }
+    ];
+    return this.http.post('/api/register', { username, password, firstName, lastName, email, roles }).pipe(
+      map(response => ({ message: response }))
+    );
+  }
+
+  update(fullUser: User) {
+    const headers = {
+      'Authorization': 'Bearer ' + this.authToken
+    };
+
+    return this.http.put('/api/user/update', { ...fullUser }, { headers }).pipe(
+      map(response => ({ message: response }))
+    );
   }
 
   remove(id: string) {
-    return this.http.delete(`${LOGIN_API}/remove/${id}`);
+    const headers = {
+      'Authorization': 'Bearer ' + this.authToken
+    };
+
+    return this.http.delete('/api/user/remove/' + id, { headers });
   }
 
   all(): Observable<Array<any>> {
-    return of([]);
-  }
+    const headers = {
+      'Authorization': 'Bearer ' + this.authToken
+    };
 
-  private fullUserPOST(path: string, user_name: string, password: string, full_name: string, email: string) {
-    const body = { user_name, password, full_name, email};
-    const headers = { ...this.headers };
-
-    return this.http.post(`${LOGIN_API}/${path}`, { headers, body });
+    return this.http.get<Array<any>>('/api/user/users', { headers });
   }
 }

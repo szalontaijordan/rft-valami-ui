@@ -14,18 +14,23 @@ export class LoginComponent implements OnInit {
               public userService: UserService,
               private router: Router) { }
 
+  error: boolean;
+
   ngOnInit() {
   }
 
   login(model: any) {
     const { userName, password } = model;
 
-    this.userService.isValid(userName, password).subscribe({
+    this.userService.authenticate(userName, password).subscribe({
       next: data => {
-        // TODO we might want to set some token here?
-        this.userService.isLoggedIn = true;
-        this.userService.currentUser.next(data);
-        this.router.navigate(['dashboard']);
+        this.userService.authToken = data['access_token'];
+        this.userService.getCurrentUser(userName).subscribe(user => {
+          this.router.navigate(['dashboard']);
+        });
+      },
+      error: err => {
+        this.error = true;
       }
     });
   }

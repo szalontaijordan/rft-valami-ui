@@ -39,12 +39,16 @@ section.main {
 }
 
 .all-users-list li {
+    position: relative;
     border-radius: 4px;
-    padding: 8px;
     background-color: #7ca1ca;
     color: white;
     margin: 8px auto;
     display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 16px;
 }
 
 .all-users-list li span {
@@ -70,11 +74,15 @@ section.main {
         width: initial;
         margin: initial;
         display: inline-block;
+        padding: 2px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
     }
 
     .all-users-list li {
         border-radius: 16px;
-        padding: 0 0 0 16px;
     }
 }
 

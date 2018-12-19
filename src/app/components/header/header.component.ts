@@ -33,8 +33,7 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() {
-    this.userService.isLoggedIn = false;
-    this.userService.currentUser.next(null);
+    this.userService.authToken = null;
     this.router.navigate(['login']);
   }
 
@@ -51,7 +50,7 @@ export class HeaderComponent implements OnInit {
   }
 
   get isLoggedIn() {
-    return this.userService.isLoggedIn;
+    return !!this.userService.authToken;
   }
 
   get locale() {

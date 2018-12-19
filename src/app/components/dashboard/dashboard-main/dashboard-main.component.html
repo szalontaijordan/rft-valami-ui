@@ -1,5 +1,5 @@
 <section class="main">
-  <div (click)="showAllUsersModal()" *ngIf="role === 'ADMIN'" class="tile all-users" appLoggedElement>{{ i18n.dashboard.main.allUsers }}</div>
+  <div (click)="showAllUsersModal()" class="tile all-users" appLoggedElement>{{ i18n.dashboard.main.allUsers }}</div>
   <div (click)="showTBDModal()" class="tile subjects" appLoggedElement>{{ i18n.dashboard.main.subjects }}</div>
   <div (click)="showTBDModal()" class="tile download" appLoggedElement>{{ i18n.dashboard.main.download }}</div>
   <div (click)="showTBDModal()" class="tile upload" appLoggedElement>{{ i18n.dashboard.main.upload }}</div>
@@ -7,13 +7,13 @@
     <p><strong>{{ i18n.dashboard.info.tbd }}</strong></p>
   </ngx-smart-modal>
   <ngx-smart-modal #allUsersModal identifier="allUsersModal">
-    <p class="alert-text">{{ i18n.dashboard.info.adminDelete }}</p>
+    <p *ngIf="role === 'ADMIN_USER'" class="alert-text">{{ i18n.dashboard.info.adminDelete }}</p>
     <ul class="all-users-list">
       <li *ngFor="let user of allUsers">
         <span>{{ user?.fullName }}</span>
-        <span>&nbsp;({{ user?.userName }})</span>
+        <span>&nbsp;({{ user?.username }})</span>
         <span>&nbsp;-&nbsp;{{ user?.role}}</span>
-        <button (click)="deleteUser(user.id)" class="delete btn btn-danger" appLoggedElement>X</button>
+        <button *ngIf="role === 'ADMIN_USER'" (click)="deleteUser(user.id)" class="delete btn btn-danger" appLoggedElement>X</button>
       </li>
     </ul>
   </ngx-smart-modal>

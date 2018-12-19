@@ -10,9 +10,10 @@
         <div class="credentials">
             <h1><span>{{ i18n.login.title | uppercase }}</span></h1>
             <app-credential-form (login)="login($event)"></app-credential-form>
+            <p *ngIf="error">{{ i18n.errors.invalidCredentials }}</p>
         </div>
         <div class="image">
-            <img src="https://via.placeholder.com/400x500" alt="Placeholder">
+            <img src="../../../assets/images/party.png" alt="Placeholder">
         </div>
     </section>
 </div>

@@ -19,14 +19,10 @@ export class RegisterComponent implements OnInit {
   }
 
   registerUser(newUser: any) {
-    const { userName, fullName, password, email } = newUser;
-    this.userService.upload(userName, password, fullName, email).subscribe({
-      next: data => {
-        this.router.navigate(['login']);
-      },
-      error: err => {
-        // TODO
-      }
+    const { username, firstName, lastName, password, email } = newUser;
+    this.userService.upload(username, password, firstName, lastName, email).subscribe(data => {
+      console.log(data);
+      this.router.navigate(['login']);
     });
   }
 

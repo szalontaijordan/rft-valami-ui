@@ -14,7 +14,7 @@ export class DashboardComponent implements OnInit {
 
   currentUser = {
     role: '',
-    userName: '',
+    username: '',
     fullName: '',
     email: ''
   };
@@ -32,16 +32,16 @@ export class DashboardComponent implements OnInit {
     this.userService.currentUser.pipe(
       map(user => {
         if (user) {
-          const { email, fullName, userName, role } = user;
-        
+          const { email, firstName, lastName, username, roles } = user;
+
           return {
-            fullName,
-            userName,
-            role,
+            fullName: firstName + ' ' + lastName,
+            username,
+            role: roles[0].roleName,
             email
           };
         }
-        
+
         return null;
       })
     ).subscribe({
@@ -49,28 +49,38 @@ export class DashboardComponent implements OnInit {
     });
 
     this.userService.all().subscribe({
-      next: allUsers => this.allUsers = allUsers
+      next: allUsers => this.allUsers = allUsers.map(user => {
+        return {
+          id: user.id,
+          fullName: user.firstName + ' ' + user.lastName,
+          username: user.username,
+          role: user.roles[0] ? user.roles[0].roleName : 'NO_ROLE'
+        };
+      })
     });
   }
 
   deleteUser() {
-    this.userService.isLoggedIn = false;
-    this.router.navigate(['login']);
+    const { id } = this.userService.currentUser.value;
+
+    this.userService.remove(String(id)).subscribe(next => {
+      this.router.navigate(['login']);
+    });
   }
 
   deleteUserById(id: string) {
-    this.allUsers = this.allUsers.filter(user => user.id !== id);
-    this.userService.remove(id);
+    this.userService.remove(id).subscribe(next => this.allUsers = this.allUsers.filter(user => user.id !== id));
   }
 
   updateUser(user) {
-    const newUser = { ...this.currentUser };
-    
-    for (let key in user) {
-      newUser[key] = user[key];
-    }
+    const { username, fullName, password } = user;
 
+    const firstName = fullName.split(' ')[0];
+    const lastName = fullName.split(' ')[1] || '';
+    const newUser = { ...this.userService.currentUser.value, firstName, lastName, username, password };
     this.userService.currentUser.next(newUser);
+
+    this.userService.update(newUser).subscribe();
   }
 
 }

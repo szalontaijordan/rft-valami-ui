@@ -27,6 +27,7 @@ import { LoggerService } from './services/logger/logger.service';
 import { DashboardLoggerService } from './services/logger/dashboard/logger.service.dashboard';
 import { LoggedElementDirective } from './directives/logged-element.directive';
 import { NgxSmartModalModule } from 'ngx-smart-modal';
+import { RemoteUserService } from './services/user/remote/user.service.remote';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,7 @@ import { NgxSmartModalModule } from 'ngx-smart-modal';
     NgxSmartModalModule.forRoot()
   ],
   providers: [
-    { provide: UserService, useClass: MockUserService },
+    { provide: UserService, useClass: RemoteUserService },
     { provide: I18nService, useClass: StaticI18nService },
     { provide: NewsService, useClass: APINewsService },
     { provide: LoggerService, useClass: DashboardLoggerService }

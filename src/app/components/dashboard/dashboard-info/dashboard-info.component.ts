@@ -14,8 +14,11 @@ export class DashboardInfoComponent implements OnInit {
 
   model = {
     fullName: '',
-    userName: ''
+    username: '',
+    password: ''
   };
+
+  isShowPassword = false;
 
   @Output()
   deleteUser = new EventEmitter<void>();
@@ -28,7 +31,7 @@ export class DashboardInfoComponent implements OnInit {
 
   ngOnInit() {
     this.model.fullName = this.user.fullName;
-    this.model.userName = this.user.userName;
+    this.model.username = this.user.username;
   }
 
   editProfile() {
@@ -48,4 +51,7 @@ export class DashboardInfoComponent implements OnInit {
     this.deleteUser.emit();
   }
 
+  togglePassword() {
+    this.isShowPassword = !this.isShowPassword;
+  }
 }

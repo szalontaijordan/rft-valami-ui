@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { UserService } from '../user.service';
+import { UserService, User } from '../user.service';
 import { of, Observable, BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -14,24 +14,32 @@ export class MockUserService extends UserService {
     email: 'mock@mock.mock',
     passowrd: 'mockpassword',
     role: 'ADMIN'
-  }
+  };
 
   constructor() {
     super();
-    this.isLoggedIn = false;
+    this.authToken = 'mock-token';
     this.currentUser = new BehaviorSubject<any>(null);
   }
 
-  isValid(userName: string, password: string): Observable<any> {
+  getCurrentUser(username: string) {
     return of(this.mockUser);
   }
 
-  upload(userName: string, password: string, fullName: string, email: string): Observable<any> {
-    return this.fullUserPOST('', userName, password, fullName, email);
+  authenticate(userName: string, password: string) {
+    return of({});
   }
 
-  update(userName: string, password: string, fullName: string, email: string): Observable<any> {
-    return this.fullUserPOST('', userName, password, fullName, email);
+  isValid(): Observable<any> {
+    return of('this.mockUser');
+  }
+
+  upload(userName: string, password: string, fullName: string, email: string): Observable<any> {
+    return null;
+  }
+
+  update(fullUser: User): Observable<any> {
+    return null;
   }
 
   remove(id: string): Observable<any> {

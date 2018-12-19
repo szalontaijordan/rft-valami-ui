@@ -17,7 +17,7 @@ export class RegisterFormComponent implements OnInit {
   isShowPassword = false;
 
   model = {
-    userName: '',
+    username: '',
     email: '',
     password: '',
     passwordAgain: '',
@@ -52,15 +52,16 @@ export class RegisterFormComponent implements OnInit {
   }
 
   private createUserFromModel(): any {
-    const { userName, firstName, lastName, nickName, password, email } = this.model;
+    const { username, firstName, lastName, nickName, password, email } = this.model;
 
-    const nick =  nickName ? ` (${nickName})` : '';
+    const nick =  nickName ? `(${nickName})` : '';
 
     return {
-      userName,
+      username,
       email,
       password,
-      fullName: `${lastName} ${firstName}${nick}`
+      firstName,
+      lastName: `${lastName} ${nick}`
     };
   }
 }

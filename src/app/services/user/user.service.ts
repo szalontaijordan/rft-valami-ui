@@ -1,6 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject } from 'rxjs';
 
+export interface User {
+  id: number;
+  firstName: string;
+  lastName: string;
+  username: string;
+  password: string;
+  email: string;
+  roles: Array<{
+    id: number,
+    roleName: string;
+    description: string;
+  }>;
+}
+
 @Injectable()
 export abstract class UserService {
 
@@ -8,18 +22,22 @@ export abstract class UserService {
     'Content-Type': 'application/json'
   };
 
-  isLoggedIn: boolean;
-  currentUser: BehaviorSubject<any>;
+  authToken: string;
+  currentUser: BehaviorSubject<User>;
 
   constructor() { }
 
-  abstract isValid(userName: string, password: string): Observable<any>;
+  abstract authenticate(userName: string, password: string): Observable<any>;
 
-  abstract upload(userName: string, password: string, fullName: string, email: string): Observable<any>;
+  abstract getCurrentUser(username: string): Observable<any>;
 
-  abstract update(userName: string, password: string, fullName: string, email: string): Observable<any>;
+  abstract isValid(): Observable<string>;
+
+  abstract upload(username: string, password: string, firstName: string, lastName: string, email: string): Observable<any>;
+
+  abstract update(fullUser: User): Observable<any>;
 
   abstract remove(id: string): Observable<any>;
 
-  abstract all(): Observable<Array<any>>;
+  abstract all(): Observable<Array<User>>;
 }
