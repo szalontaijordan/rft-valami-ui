@@ -30,6 +30,8 @@ The look of this application was customized for this particular project, with th
 
 ### Run the app
 
+The app is available at https://rft-valami.herokuapp.com/login. To run locally please follow these steps:
+
 0. Please, make sure that you have Node.js and npm installed to your machine, and you checked out the repository and install the dependencies
 
 ```
