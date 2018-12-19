@@ -45,3 +45,11 @@ $ node app.js
 $ npm run dev-ui
 ```
 2. Open the browser at `localhost:3000`
+
+**NOTE**: you have to specifiy the following enviroment variables to work properly
+```
+process.env.GMAIL_EMAIL
+process.env.GMAIL_PASS
+process.env.CLIENT_ID
+process.env.CLIENT_SECRET
+```
